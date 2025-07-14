@@ -32,6 +32,5 @@ Plataforma: [DIO - Digital Innovation One](https://web.dio.me/track/formacao-htm
 
 ---
 
-💡 **Status**: Em andamento / Concluído (escolha o que se aplica)
-
+💡 **Status**: Em andamento
 🛠️ Projetos em andamento disponíveis neste repositório.
