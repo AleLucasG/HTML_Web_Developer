@@ -6,31 +6,34 @@ Plataforma: [DIO - Digital Innovation One](https://web.dio.me/track/formacao-htm
 ---
 
 ## 📌 Primeiros Passos com HTML
-- Introdução ao desenvolvimento web
-- Diferença entre HTML, CSS e JavaScript
+- Entendendo a comunicação Cliente x Servidor
+- Introdução ao HTML na prática
 - Estrutura básica de um documento HTML
-- Como criar e abrir arquivos `.html`
 - Ferramentas e navegadores
+- Tags HTML essenciais (`<html>`, `<head>`, `<body>`, `<p>`, `<h1>` até `<h6>`)
+- Atributos HTML (`lang`, `title`, `href`, `src`, `alt`)
+- Tags auxiliares (`<abbr>`, `<del>`, `<mark>`, `<sup>`)
+- Links e imagens
+- Listas ordenadas e não ordenadas
+- Boas práticas e semântica
+- **Desafio I**
 
 ---
 
 ## 📌 HTML I - Conceitos Básicos
-- Tags HTML essenciais (`<html>`, `<head>`, `<body>`, `<p>`, `<h1>` até `<h6>`)
-- Atributos HTML (`lang`, `title`, `href`, `src`, `alt`)
-- Links e imagens
-- Listas ordenadas e não ordenadas
-- Boas práticas e semântica
+- Trabalhando com formulários em HTML (`<form>`, `<input>`, `<textarea>`, `<select>`)
+- Estruturando seu HTML + Formatações (Formatando Textos I e II, `div` e `span`, `fieldsets`, `embeds`, `iframes`, resenha sobre cores)
+- Trabalhando com mídias utilizando HTML (`<img>`, `<audio>`, `<video>`, `<track>`, `<iframe>`)
+- Criando tabelas em HTML (`<table>`, `<tr>`, `<td>`, `<th>`)
+- **Desafio II**
 
 ---
 
 ## 📌 HTML II - Ampliando o Conhecimento
-- Tabelas e seus elementos (`<table>`, `<tr>`, `<td>`, `<th>`)
-- Formulários HTML (`<form>`, `<input>`, `<textarea>`, `<select>`)
-- Elementos semânticos (`<section>`, `<article>`, `<aside>`, `<footer>`)
-- Tags auxiliares (`<abbr>`, `<del>`, `<mark>`, `<sup>`)
-- Estruturação de páginas mais completas
+- Entendendo HTML semântico (`<section>`, `<article>`, `<aside>`, `<footer>`)
+- HTML: Recursos especiais (Tags: `datalist`, `code`, `kbd`, `pre`, `details`, `summary`, `meter`, `progress`, `mark`, `canvas`, integração com JavaScript)
+- **Projeto:** Recriando o Wikipedia com layout moderno
 
 ---
 
-💡 **Status**: Em andamento
-🛠️ Projetos em andamento disponíveis neste repositório.
+💡 **Status:** Em andamento
