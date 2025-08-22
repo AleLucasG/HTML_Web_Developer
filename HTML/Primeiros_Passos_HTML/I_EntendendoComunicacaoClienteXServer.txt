@@ -1,0 +1,436 @@
+
+----------- 1º Historia da Web ----------- 
+
+---- Apresentação do Curso e Professor
+ 
+ Percurso:
+ Etapa 1: Historia da Web.
+ Etapa 2: O que são Clients?
+ Etapa 3: O que são Servers?
+ Etapa 4: Sobre linguagem de programação Web.
+ 
+ Objetivo Geral
+ Entender um pouco da história do computador, sugimento da internet e entender como funciona toda a comunicação, quando você acessa uma página web ou utiliza um aplicaivo.
+
+---- Primeiros Computadores
+
+1ª Geração: Computadores enormes
+1944 - Computador Harvard Mark I 1944.
+1946 - Computador para calculos, criptografia: Colossus - Alemanha
+1946 - ENIAC - EUA
+
+2ª Geração: Diminuição no tamanho dos computadores
+1959 a 1965 - Transitores
+
+3ª Geração: Circuito integrado 
+1965 a 1970
+
+- Transitor
+- Capacitores
+- Resistores
+
+4ª Geração: a partir de 1974
+Personal computers
+Notebooks
+Mouse
+
+5ª Geração: 
+Computador quantido
+AI
+Metaverso (Ambiente virtual)
+Bitcoin
+
+---- Como Surgiu (Internet)
+ Historia da Web
+ Primeiro sistemas de comunicação = Telegrafo: Código morse(1ª forma de se comunicar)
+ 1958 primeiro cabo de ponto a ponto de um continente a outro.
+ 
+ 1950 Guerra Fria, explosão da Tecnologia e corrida espacial.
+ ENIAC (EUA) criado para calcular a rota de miseis.
+ 
+ Primeira conexão estabelecda da internet foi em 29/10/1969 pela UCLA (University of California) com a SRI(Stanford Research Institute).
+	- Palavra "LOGIN", mas só chegou "LO". Primeira palavra trafegada.
+	
+ 1989 World Wide Web
+	- 6 Agosto 1991, primeira pagina web.
+	- Criado por Tim Berners-Lee, pai da internet.
+	
+---- Grandes Nomes da Tecnologia
+
+Grace Murray Hopper
+	- Umas das primeiras programadoras do MARK I em 1944.
+	- Criadora da LP em alto nivelk Flow-Matic(Base do COBOL)
+	- Trouxe o termo "bug" na computação.
+	
+Joseph Carl Robnerr Licklider
+	- Plantou a "semente" da comunicação entre dois pontos distintos através do computador.
+	
+Robert E. Kahn
+
+Tim Berners-Lee
+	- Inventor do WWWW
+	- Popularizou o HTTP e HTML
+	
+Bill Gates	
+	- Fundados Microsoft.
+	- Equipe da Microsoft criou o Internet Explore.
+	- Tornou acessivel para todos os computadores, e com isso o acesso à internet.
+	
+Steve Jobs
+	- Fundador Apple
+	- Concorrente direta da Microsoft
+	- Popularizou o smartphone em Junho de 2007
+	
+	
+----------- O que são Clients? -----------
+
+---- Cliente no Linguajar Web
+
+Conceito de Client no "linguajar" web
+
+Cliente = quando vc consome a informação/algo de algum lugar.
+
+📝 Resumo Simples:
+🔸 Solicitando:
+Clientes (Celular / PC / Tablet) ➡️ Internet (protocolo HTTP) ➡️ Servidores (onde estão os conteúdos).
+
+🔸 Recebendo:
+Servidores (onde estão os conteúdos) ➡️ Internet (protocolo HTTP) ➡️ Clientes (Celular / PC / Tablet).
+
+✅ Exemplo prático:
+Você digita www.google.com no celular (requisição).
+O servidor do Google recebe o pedido e devolve a página para o seu celular (resposta).
+
+➡️ Requisição (Cliente → Servidor)
+⬅️ Resposta (Servidor → Cliente)
+
+
+✅ Explicando:
+	- Clientes: São os dispositivos usados pelos usuários (smartphone, computador, tablet).
+	- Internet: Meio de comunicação entre cliente e servidor, usando protocolos como HTTP ou HTTPS.
+	- Servidores: São os computadores que armazenam os conteúdos (sites, vídeos, redes sociais, etc.).
+
+
+✅ Como funciona o Cache do Navegador:
+
+Quando você acessa um site pela primeira vez, seu navegador baixa e guarda (em cache) arquivos estáticos:
+👉 HTML, CSS, JavaScript, imagens, ícones, etc.
+
+Na próxima vez que você acessar o mesmo site:
+👉 O navegador reaproveita esses arquivos do cache local (já salvos no seu computador), então a página carrega mais rápido.
+
+Se você limpar o cache:
+👉 O navegador vai buscar tudo de novo no servidor, como se fosse a primeira vez.
+
+💡 Resumindo:
+Cache presente = site mais rápido.
+Cache limpo = tudo precisa ser baixado novamente.
+
+
+🔹 Cache é um tipo de memória (armazenamento temporário) usada para guardar dados que podem ser reutilizados rapidamente.
+
+No caso da internet:
+O navegador usa o cache (no HD ou SSD do seu computador) para guardar arquivos de sites já visitados: HTML, CSS, imagens, scripts, etc.
+Assim:
+Quando você acessa o site de novo ➡️ Ele usa o cache (mais rápido do que baixar de novo).
+Se o cache foi apagado ou se o arquivo mudou ➡️ Ele baixa novamente do servidor.
+
+💡 Não é só navegador que usa cache! Sistemas, aplicativos, processadores e bancos de dados também usam cache para ganhar velocidade.
+ 
+ 
+** DIFERENTES RESOLUÇÕES, DEVE SER CONSIDERADO NA CRIAÇÃO DE WEBSITES
+** TAMBÉM A COMPATIBILIDADE ENTRE NAVEGADORES (BROWSERS).
+-- BOAS PRÁTICAS E TESTES. 
+
+---- Navegadores
+
+Navegadores
+- Programas criados por empresas, utilizados para abrir, exibir e executar páginas e arquivos da web.
+- São responsáveis por interpretar linguagens como HTML, CSS e JavaScript.
+- Permitem a navegação na Internet, acessando conteúdos armazenados em servidores remotos.
+- Também chamados de "browsers"
+- Inicioi com o MOSAIC, passou para o Netscape, e hoje temos uma vaiedade de navegadores disponiveis e gratuitos.
+- Alguns exemplos: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.
+
+📌 Tags HTML e Navegadores:
+
+1. As tags HTML (como <p>, <h1>, <div>, <img>, etc.) são iguais para todos os navegadores.
+2. Quem define essas tags é um órgão chamado W3C (World Wide Web Consortium), que cria os padrões da web.
+3. Os navegadores (Chrome, Firefox, Edge, Safari...) tentam seguir esses padrões para que o site funcione do mesmo jeito para todos os usuários.
+
+✅ Mas por que alguns sites funcionam diferente em navegadores diferentes?
+- Porque cada navegador tem seu próprio motor de renderização (Ex: Chrome usa o Blink, Firefox usa o Gecko) e às vezes:
+	- Interpretam CSS ou JavaScript de forma um pouquinho diferente.
+	- Oferecem recursos novos que ainda não são padrão para todos.
+
+💡 Resumo:
+	- Tags HTML são as mesmas.
+	- O que pode mudar é como cada navegador interpreta ou exibe essas tags.
+	
+	
+---- Aplicações Web
+
+O que é uma aplicação Web?
+	São soluções criadas que possuem a internet como meio de comunicação entre Cliente X Server, não sendo necessário a sua instação.
+	
+	
+---- Dispositivos Móveis	
+
+Celulares, Tablets, SmartWatch, etc.
+
+A internet está presente em nossas vidas, e majoritariamente através dos dispositivos móveis.
+
+
+----------- Sobre Servidores -----------
+
+
+---- O que é um Servidor?
+
+É um computador ou sistema que fornece (serve) dados, arquivos ou serviços para outros computadores chamados de clientes (celular, PC, tablet).
+
+📌 Para que serve o Servidor?
+Ele armazena e entrega informações (sites, imagens, vídeos, sistemas) quando o cliente faz um pedido pela Internet ou rede local.
+
+Outros exemplos:
+	- Arquivos
+	- Segurança (Firewall)
+	- Streaming
+	- E-mail
+	- Web
+
+🔗 Tipos (de forma simples):
+Servidor Local:
+➡️ Fica na mesma rede ou no seu próprio computador (ex: servidor de testes, servidor de arquivos dentro de uma empresa).
+➡️ Não precisa de internet para funcionar, só da rede interna.
+
+Servidor Web:
+➡️ Fica na internet (nuvem ou datacenter) e atende usuários do mundo todo.
+➡️ Usado para sites, aplicativos online, e-commerce, redes sociais, etc.
+
+✅ Resumão:
+	- Servidor: guarda e entrega algo.
+	- Local: dentro da empresa ou máquina.
+	- Web: disponível pela internet.
+	
+	
+Servidor é dividivo em 2 partes:
+Logica:
+	- Sistema Operacional (Windows server, Ubuntu, Centos, Fedora, Oracle Linux, Debian)
+	- Monitoramento
+	- Servidores Web (Apache HTTP Server Projetc, NGINX)
+	
+Fisica:
+	- Armazenamento(Disco rígido, SSDs
+	- Memória
+	- Processadores
+	
+	
+Requisição servidor Web:
+	> Requissão https > Respostas: Servidor (Centos, NGINX)
+	< Servidor (Centos, NGINX) > Resposta: HTML, CSS, JS, Imagens, Textos.
+	
+	
+---- Tipos de Servidores
+
+Tipos de Servidores
+	- Arquivos
+	- Segurança (Firewall)
+	- Streaming
+	- E-mail
+	- Web
+	
+🔗 O que é um Servidor Proxy?
+	- É um intermediário entre o cliente (PC, celular) e a Internet (servidor real).
+	- Todo o tráfego passa primeiro pelo proxy antes de chegar ao destino final.
+
+✅ Para que serve o Proxy?
+1. Segurança:
+➔ Esconde o IP real do cliente.
+➔ Pode bloquear sites perigosos.
+
+2.Controle:
+➔ Permite monitorar e limitar o uso da internet (muito usado em empresas).
+
+3.Cache:
+➔ Guarda páginas ou arquivos acessados com frequência, deixando o acesso mais rápido.
+
+📌 Resumindo:
+Cliente ➡️ Proxy ➡️ Internet ➡️ Servidor (e volta pelo mesmo caminho).
+O proxy funciona como um “filtro” ou “porta de entrada” entre você e a internet.
+
+
+🔥 Firewall também pode fazer esse tipo de filtro, mas com um objetivo diferente do Proxy.
+
+🔐 Diferença entre Proxy e Firewall (Resumido):
+
+🔗 Proxy										🔥 Firewall
+Intermediário entre cliente e internet.			Barreira de proteção entre redes.
+Filtra o conteúdo (sites, páginas, etc.).		Filtra o tráfego (portas, protocolos, IPs).
+Pode guardar cache para acelerar acesso.		Bloqueia ou permite acesso de dados com base em regras.
+Controla o que você acessa.						Controla quem pode entrar ou sair da rede.
+
+
+💡Um firewall é um sistema de segurança projetado para proteger redes ou dispositivos individuais, monitorando e controlando o tráfego de rede de entrada e saída com base em regras de segurança predefinidas. 
+Ele atua como uma barreira entre redes confiáveis e não confiáveis, como a internet, impedindo acessos não autorizados e protegendo contra ameaças como vírus e hackers. 
+	
+✅ Resumo simples:
+	- Proxy: Foca no conteúdo (sites, páginas, arquivos).
+	- Firewall: Foca no acesso (quem pode entrar ou sair da rede).
+
+💡 Algumas empresas usam Proxy + Firewall juntos para ter controle e segurança ao mesmo tempo.
+
+
+🏢 O que é Intranet?
+	- É uma rede interna de uma empresa ou organização.
+	- Serve para compartilhar informações, sistemas e serviços apenas entre funcionários ou pessoas autorizadas.
+	- Não está aberta ao público, como a internet.
+
+✅ Para que serve a Intranet?
+	- Acesso a sistemas internos (RH, ERP, documentos, comunicados).
+	- Comunicação interna (avisos, chat, e-mails).
+	- Segurança: Só quem está dentro da rede da empresa ou com login autorizado consegue acessar.
+
+💡 Resumindo:
+	- Internet: aberta para todos.
+	- Intranet: fechada, só para a corporação.
+	
+Sercidor DNS:
+	- Os servidores DNS são responsáveis por fazer com que o seu dominio possa ser localizado n internet.	
+	
+	
+---- Hospedagem de Sites	
+
+🌐 O que é Hospedagem de Site?
+	- É um serviço que “guarda” (hospeda) todos os arquivos do seu site (HTML, imagens, vídeos, banco de dados) em um servidor.
+	- Esse servidor fica disponível 24 horas para que qualquer pessoa, em qualquer lugar, possa acessar seu site pela Internet.
+
+✅ Para que serve?
+	- Tornar seu site acessível online (ex: www.seusite.com).
+	- Armazenar todos os arquivos, sistema e dados do site.
+	- Garantir que o site fique funcionando o tempo todo.
+
+🔑 Tipos comuns de hospedagem:
+	- Compartilhada: Vários sites no mesmo servidor (mais barato).
+	- VPS (Servidor Virtual): Mais recursos e controle.
+	- Dedicada: Um servidor só para você (mais caro e potente).
+	- Hospedagem na Nuvem: Escalável e moderna (ex: AWS, Azure).
+
+💡 Resumo rápido:
+Hospedagem = lugar onde seu site “mora” para ser acessado na internet.
+
+
+📝 Etapas para Criar e Publicar um Site:
+✅ 1. Criar o Site
+	- Fazer o design (visual).
+	- Escrever o código (HTML, CSS, JavaScript).
+	- Se for dinâmico, criar também o back-end (PHP, C#, Node.js, etc.) e banco de dados.
+
+✅ 2. Registrar um Domínio (DNS)
+	- Escolher um nome (ex: meusite.com.br) e registrar em empresas como:
+		➔ Registro.br (para domínios .br)
+		➔ GoDaddy, HostGator, etc.
+	- Esse domínio vira o endereço do seu site na internet.
+
+✅ 3. Contratar a Hospedagem
+	- Escolher um serviço de hospedagem (ex: HostGator, Locaweb, Umbler, etc.).
+	- É o servidor onde seu site vai “morar”.
+
+✅ 4. Apontar o DNS para a Hospedagem
+	- Nas configurações do domínio, você informa qual é o servidor de hospedagem (DNS).
+	- Exemplo de DNS: ns1.hospedagem.com e ns2.hospedagem.com.
+
+✅ 5. Subir o Site (Upload dos Arquivos)
+	- Enviar os arquivos do site para o servidor (via Painel da hospedagem ou FTP).
+	- Se tiver banco de dados, subir também.
+
+✅ 6. Testar e Publicar
+	- Acessar pelo navegador (ex: www.meusite.com) e testar tudo.
+
+💡 Resumo Simplificado:
+	- Criar o site 🛠️
+	- Registrar domínio 🌐
+	- Contratar hospedagem 🏠
+	- Configurar DNS 🔗
+	- Subir o site 🚀
+	- Testar e publicar ✅
+	
+	
+----------- Linguagem de Programação -----------	
+
+---- O que é?
+	- Linguagem de progração é uma linguagem escrita e formal que especifica um conjunto de instruções e regras usadas para gerar programas (software).
+	
+📌 Exemplos de Linguagens:
+	- Python
+	- Java
+	- C#
+	
+---- Server-Side
+	- Linguagem Server-Side (ou lado do servidor) é a linguagem que roda no servidor e gera o conteúdo da página antes de enviá-lo para o navegador do usuário.
+	
+📌 Exemplos de Linguagens Server-Side:
+	- PHP
+	- C# (ASP.NET)
+	- Java (Spring, JSP)
+	- Python (Django, Flask)
+	- Node.js (JavaScript rodando no servidor)
+	- Ruby (Rails)
+
+🛠️ Para que serve?
+	- Processar requisições (ex: login, cadastro).
+	- Acessar e manipular bancos de dados.
+	- Gerar conteúdo dinâmico (ex: redes sociais, lojas virtuais).
+	- Controlar segurança e autenticação.
+
+✅ Diferença Resumida:
+	- Server-Side: O que acontece no servidor (antes da página chegar no navegador).
+	- Client-Side: O que acontece no navegador do usuário (HTML, CSS, JavaScript).
+
+--- Client-Server
+	- O modelo Cliente-Servidor é a base da comunicação na internet e nas redes. Cada lado pode usar linguagens diferentes.
+
+✅ Cliente (Client-Side)
+	- Roda no navegador do usuário (Celular, PC, Tablet).
+	- Exibe as páginas, imagens, botões e animações.
+	- Linguagens principais:
+	- HTML (estrutura)
+	- CSS (estilo)
+	- JavaScript (interatividade)
+
+** 💡 JavaScript (JS) pode ser:
+✅ Client-Side (lado do cliente)
+	- É o uso mais tradicional do JavaScript.
+	- Roda no navegador do usuário (Chrome, Edge, Firefox).
+	- Faz páginas interativas: animações, validação de formulários, pop-ups, sliders, etc.
+
+✅ Server-Side (lado do servidor)
+	- Com o Node.js, o JavaScript também passou a ser usado no servidor.
+	- Roda em servidores e processa dados, acessa banco de dados, faz APIs, etc.
+
+🔗 Resumindo:
+Onde roda?			Linguagem/Exemplo
+Client-Side			JavaScript (normal) no navegador
+Server-Side			JavaScript com Node.js no servidor
+
+✅ JavaScript é a única linguagem que pode ser usada nos dois lados (Cliente e Servidor).
+
+
+---- HTML não e linguagem de programação
+
+📌 HTML não é linguagem de programação?
+	- HTML (HyperText Markup Language) é uma linguagem de marcação.
+	- Serve para estruturar o conteúdo de uma página web (textos, imagens, links, tabelas, etc.).
+	- Textos delimitados por nomes que o navegador consegue interpretar.
+	- Cada nome destes delimitadores tem uma função e comportamento especifico.
+	- Não faz cálculos, não tem lógica, nem condições (como if, for, etc.).
+	
+	** Arquivo csv também é um arquivo de marcação.
+	
+
+✅ Resumo:
+Linguagem		                      O que faz?										   Tipo
+  HTML			Monta a estrutura da página (títulos, parágrafos, imagens)			Linguagem de marcação
+  CSS			Cuida da aparência (cores, tamanhos, posições)						Linguagem de estilo
+JavaScript		Dá interatividade e lógica (botões, animações, validação)			Linguagem de programação
+
+	
