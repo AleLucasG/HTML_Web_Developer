@@ -1,0 +1,278 @@
+------------- Trabalhando com mídias -------------
+
+Apresentação
+ 
+ Percurso:
+ - Entendendo Tags de mídia
+ - Tag <img>
+ - Tag <audio>
+ - Tag <video>
+ - Tag <track>
+ - Tag <iframe>
+ 
+ Saber tudo sobre mídias no HTML. 
+ Aprender a colocar imagens, vídeos, para enriquecer a experiência do usuário no seu site.
+ 
+------------- O que são Tags de mídias -------------
+
+✅Tags de mídias são “etiquetas” usadas para inserir, identificar ou descrever elementos de 
+mídia (como imagens, áudio e vídeo) dentro de páginas ou sistemas.
+
+No contexto mais comum — HTML — as principais tags de mídia são:
+
+ - <img> → insere imagens.
+ - <audio> → insere e controla áudio.
+ - <video> → insere e controla vídeos.
+ - <source> → define arquivos de mídia para <audio> ou <video>.
+ - <track> → adiciona legendas ou faixas de texto sincronizadas a um vídeo/áudio.
+ - <picture> → oferece múltiplas fontes de imagem para diferentes tamanhos de tela ou formatos.
+ - <embed> → insere conteúdo interativo ou multimídia, como PDFs, animações, etc.
+ - <object> → insere objetos externos (apresentações, animações Flash, etc.).
+ - <iframe> → insere outra página ou conteúdo externo (como vídeos do YouTube).
+
+📌 Fora do HTML, “tags de mídia” também podem significar metadados que descrevem um arquivo 
+de mídia (por exemplo, artista, álbum e gênero em um MP3), ajudando na organização e busca.
+
+------------- Tag <img> -------------
+
+✅ Tag <img> é usada em HTML para inserir imagens em uma página.
+
+Ela não tem tag de fechamento (é self-closing) e precisa do atributo src para indicar o endereço da imagem.
+
+Sintaxe básica:
+	<img src="imagem.jpg" alt="Descrição da imagem">
+	
+✅ Principais atributos:
+ - src → caminho ou URL da imagem.
+ - alt → texto alternativo, exibido se a imagem não carregar ou para leitores de tela (acessibilidade).
+ - width e height → definem largura e altura (em pixels ou %).
+ - title → texto que aparece ao passar o mouse sobre a imagem.	
+ 
+Exemplo:
+	<img src="logo.png" alt="Logotipo da empresa" width="150" height="150">
+	
+💡 Dicas:
+ - Sempre usar o alt para acessibilidade e SEO.
+ - Não usar imagens muito pesadas para não deixar o site lento.
+ - O caminho no src pode ser relativo (/imagens/foto.png) ou absoluto (https://site.com/foto.png). 
+ 
+✅ JPG e PNG
+Formato			Melhor para													
+JPG (ou JPEG)	Fotos, imagens com muitos detalhes e cores					
+PNG				Logotipos, ícones, imagens com texto ou fundo transparente	
+
+Formato			Características	Quando evitar
+JPG (ou JPEG)	Compressão com perdas (lossy), arquivo menor, mas perde um pouco de qualidade	
+PNG				Compressão sem perdas (lossless), mantém qualidade máxima, suporta transparência	
+
+Formato			Quando evitar
+JPG (ou JPEG)	Quando precisa de fundo transparente ou alta nitidez
+PNG				Arquivos podem ficar bem maiores que JPG para fotos grandes
+
+
+💡 Regra prática:
+ - Use JPG → para fotos e imagens com muitos tons de cor, onde tamanho do arquivo importa.
+ - Use PNG → para imagens com transparência, textos nítidos, logotipos e gráficos. 
+ 
+ 
+✅ tag <svg> é usada para inserir imagens vetoriais diretamente no HTML, usando o formato SVG (Scalable Vector Graphics).
+
+💡 Diferente de JPG e PNG, que são imagens "fixas", o SVG é vetorial, ou seja:
+ - Não perde qualidade ao aumentar/diminuir o tamanho.
+ - É feito de formas, linhas e texto, não de pixels.
+ - Pode ser editado e estilizado com CSS ou manipulado com JavaScript. 
+ 
+📌 Principais vantagens do SVG:
+ - Escalável sem perda de qualidade.
+ - Arquivo leve para ícones e gráficos simples.
+ - Pode ser animado.
+ - Pode receber eventos (clique, hover, etc.).
+
+🔴 Desvantagens:
+ - Não é ideal para fotos ou imagens muito complexas.
+ - Para desenhos muito detalhados, pode ficar mais pesado que JPG/PNG. 
+ 
+**O que acontece com a imagem se apenas atribuir uma largura (width) na tag <img>? 
+ R: O navegador redimensionará proporcionalmente a imagem, evitando que ela distorça.
+ 
+ 
+** São arquivos vetoriais que permitem aumentar e diminuir seu tamanho sem perder a resolução. 
+ R: svg
+ 
+** O que faz o align na tag <img>?
+ R: Alinha a imagem dentro de um texto.
+=========== EXEMPLO ===========
+ 
+<html>
+  <head>
+    <title>Trabalhando com Mídias</title>
+  </head>
+
+  <body>
+    <img
+      title="Como fazer o stiff"
+      src="https://www.inspireusafoundation.org/wp-content/uploads/2022/11/straight-leg-deadlift.gif"
+      alt="iamgem em movimento, de uma mulher de rabo de cavalo, executando de forma pausada o exercicio stiff, com uma barra e duas roscar na ponta"
+      width="200"
+      height="200"
+    />
+    <br />
+    <img
+      title="Desenho gato preto"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTesGv2zABADxn-0_JshM5Gm1CCkGFOpM8zrg&s"
+      alt="desenho de uma gato preto de pe, proximo de uma cerca. A sua frente tem um lampião com uma vela e ao fundo uma lua minguante. Proximo a calda do gato, tem uns galhos de arvore "
+    />
+  </body>
+</html>
+
+------------- Tag <audio> -------------
+
+✅ Tag <audio> é usada em HTML para inserir e reproduzir arquivos de áudio (como música, efeitos sonoros ou podcasts) diretamente na página.
+
+Sintaxe básica:
+	<audio src="musica.mp3" controls></audio>
+	
+✅Principais atributos:
+ - src → caminho ou URL do arquivo de áudio.
+ - controls → exibe os controles de reprodução (play, pause, volume).
+ - autoplay → inicia automaticamente a reprodução (pode ser bloqueado pelo navegador).
+ - loop → repete o áudio automaticamente.
+ - muted → inicia o áudio no modo mudo.
+
+💡 Exemplo com múltiplos formatos para compatibilidade:
+
+<audio controls>
+  <source src="som.mp3" type="audio/mpeg">
+  <source src="som.ogg" type="audio/ogg">
+  Seu navegador não suporta áudio.
+</audio>
+
+🔹 O <source> permite definir vários formatos para que o navegador escolha o compatível.
+
+💡 Dicas:
+ - Use sempre controls para permitir que o usuário controle a reprodução.
+ - Forneça mais de um formato (.mp3, .ogg) para maior compatibilidade.
+ - Não use autoplay sem cuidado, pois pode irritar o usuário e alguns navegadores bloqueiam.
+ 
+=========== EXEMPLO ===========
+ 
+<html>
+  <head>
+    <title>Trabalhando com Mídias</title>
+  </head>
+
+  <body>
+    <audio autoplay controls>
+      <source src="ringtone-2-1-386185.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </body>
+</html> 
+
+------------- Tag <video> -------------
+
+✅ Tag <video> é usada em HTML para inserir e reproduzir vídeos diretamente na página, de forma parecida com o <audio>.
+
+Sintaxe básica:
+	<video src="meu-video.mp4" controls></video>
+	
+Principais atributos:
+ - src → caminho ou URL do vídeo.
+ - controls → mostra os botões de play, pause, volume, etc.
+ - autoplay → inicia o vídeo automaticamente (pode ser bloqueado se não estiver com muted).
+ - muted → inicia o vídeo sem som.
+ - loop → repete o vídeo automaticamente.
+ - poster → imagem de capa exibida antes do vídeo começar.
+ - width e height → definem tamanho.	
+
+✅Exemplo com múltiplos formatos para compatibilidade (navegador vai tentar o mais conpativel):
+
+<video width="640" height="360" controls poster="capa.jpg">
+  <source src="meu-video.mp4" type="video/mp4">
+  <source src="meu-video.webm" type="video/webm">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
+🔹 O <source> é usado para fornecer o mesmo vídeo em formatos diferentes (.mp4, .webm, .ogg) para que o navegador escolha o compatível.
+
+💡 Dicas:
+ - Para vídeos curtos e leves, pode colocar o arquivo no projeto.
+ - Para vídeos grandes, é melhor hospedar em plataformas como YouTube ou Vimeo e incorporar com <iframe>.
+ - Se usar autoplay, normalmente precisa também colocar muted para funcionar nos navegadores atuais.
+
+------------- Tag <track> -------------
+
+✅ Tag <track> é usada dentro de <video> ou <audio> para adicionar faixas de texto sincronizadas — como legendas, transcrições, descrições de áudio ou capítulos.
+
+Ela não exibe nada sozinha: serve como um “arquivo auxiliar” que o navegador carrega junto do vídeo/áudio.
+
+Sintaxe básica:
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <track src="legendas.vtt" kind="subtitles" srclang="pt" label="Português">
+</video>
+
+Principais atributos:
+ - src → caminho do arquivo de legenda/transcrição (normalmente no formato .vtt – WebVTT).
+ - kind → tipo de faixa:
+	- subtitles → legendas traduzindo o áudio.
+	- captions → legendas para surdos (incluem sons e ruídos).
+	- descriptions → descrição de cenas para deficientes visuais.
+	- chapters → marcação de capítulos.
+	- metadata → dados que não são exibidos ao usuário.
+ - srclang → idioma da faixa (ex.: "pt", "en").
+ - label → nome que aparece no seletor de legendas do vídeo.
+ - default → indica que essa faixa deve ser ativada por padrão.
+
+Exemplo com legendas em dois idiomas:
+<video controls>
+  <source src="filme.mp4" type="video/mp4">
+  <track src="legendas-pt.vtt" kind="subtitles" srclang="pt" label="Português" default>
+  <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
+</video>
+
+💡 Dicas importantes:
+ - O arquivo .vtt precisa seguir o padrão WebVTT.
+ - É possível ter várias faixas no mesmo vídeo (idiomas diferentes, capítulos etc.).
+ - Sem o arquivo .vtt, o <track> não mostra nada.
+
+------------- Tag <iframe> -------------
+
+✅ Tag <iframe> serve para inserir uma página HTML dentro de outra página, ou seja, é uma “janela” que mostra um conteúdo externo no seu site.
+
+Sintaxe básica:
+	<iframe src="https://www.exemplo.com" width="600" height="400" title="Descrição do conteúdo"></iframe>
+	
+Exemplo prático (incorporando um vídeo do YouTube):
+
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  title="Vídeo do YouTube" 
+  frameborder="0" 
+  allowfullscreen>
+</iframe>	
+
+Observações:
+ - O conteúdo dentro do iframe pode ser de outro domínio, mas alguns sites bloqueiam se carregados em iframe por segurança (usando políticas como X-Frame-Options).
+ - Pode ser usado para incorporar mapas, vídeos, formulários, etc.
+ - Use com moderação, pois iframes podem impactar performance e SEO.
+
+💡O atributo default na Tag <track> serve para definir qual faixa de texto (legenda, capítulo, descrição, etc.) 
+será ativada automaticamente quando o vídeo ou áudio for carregado, caso o usuário não escolha outra.
+
+Exemplo:
+<video controls>
+  <source src="filme.mp4" type="video/mp4">
+  <track src="legendas-pt.vtt" kind="subtitles" srclang="pt" label="Português" default>
+  <track src="legendas-en.vtt" kind="subtitles" srclang="en" label="English">
+</video>
+
+🔹 Nesse exemplo, as legendas em português vão aparecer automaticamente quando o vídeo começar, porque têm o atributo default.
+
+Regras importantes:
+ - Apenas uma faixa <track> pode ter default no mesmo vídeo/áudio.
+ - O navegador só vai exibir a faixa default se o idioma (srclang) for compatível com as configurações do usuário ou se ele não tiver preferências definidas.
+
+
+Por que usar <video> ou <audio> ao invés de <embed> ?
+ - Embed não tem um peso semântico. Já as tags video e audio, só de olhar, já sabemos que se trata de áudio e/ou vídeo.

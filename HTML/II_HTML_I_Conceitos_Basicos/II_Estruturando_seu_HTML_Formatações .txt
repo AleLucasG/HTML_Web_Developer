@@ -1,0 +1,466 @@
+------------- Estruturando seu HTML + Formatações -------------
+
+Apresentação
+ 
+ Percurso:
+ - Formatando textos: <strong>, <i>, <b>, <u>
+ - Formatando textos: <font>
+ - Tag <div> e <span>
+ - Tag <fieldsets>
+ - Tag <embeds>
+ - Tag <iframes>
+ - Resenha: Sobre cores
+
+
+ Entender como formatar alguns textos pensando também em acessebilidades.
+ Estruturar melhor seu HTML, preparando ele para aplicar o CSS.
+ Conhecer mais osbre como funcionam cores no HTML.
+ 
+------------- Formatando Textos - Parte 1 -------------
+
+Semântica no HTML significa usar as tags corretas para o conteúdo certo, de forma que o navegador e os leitores de tela entendam melhor a estrutura e o significado da página.
+
+📌 O que é semântica?
+No HTML, semântica é sobre dar sentido ao conteúdo usando as tags apropriadas.
+
+❌ Tags não semânticas:
+ - <div>: só agrupa conteúdo, sem indicar significado.
+ - <span>: marca um pedaço de texto sem sentido semântico.
+⚠️ Use <div> e <span> apenas quando não houver uma tag semântica mais apropriada.
+
+🧠 Por que usar HTML semântico?
+ ✅ Ajuda no SEO (Google entende melhor a página)
+ ✅ Acessibilidade (leitores de tela funcionam melhor)
+ ✅ Manutenção e leitura do código mais fáceis
+ 
+ 
+** O que faz a tag <blockquote>?
+ Define uma citação longa dentro do texto
+
+** O que o atributo face faz na tag <font>?
+Altera a fonte do texto
+
+=========== EXEMPLO ===========
+<html>
+  <head>
+    <title>Tilha HTML</title>
+  </head>
+
+  <body>
+    Programe seu futuro global agora <br />
+    <i>Programe seu futuro global agora</i><br />
+    <b>Programe seu futuro global agora</b><br />
+    <strong>Programe seu futuro global agora</strong><br />
+    <u>Programe seu futuro global agora</u><br />
+    <mark>Programe seu futuro global agora</mark><br />
+    H<sup>₂</sup>br H₂O <br />
+
+    <p>
+      Começar o dia com um pensamento positivo pode ser a chave para atrair
+      coisas boas. Que tal tentar? Comece o dia com força, energia e
+      determinação, com estas frases positivas de motivação.
+    </p>
+    <blockquote>
+      "O sucesso é a soma de pequenos esforços repetidos dia após dia."
+    </blockquote>
+    <p>
+      Ao final do dia você verá como o pensamento positivo pode deixar seu dia
+      melhor e mais produtivo.
+    </p>
+  </body>
+</html>
+
+------------- Formatando Textos - Parte 2 -------------
+
+✅ O estilo da fonte (como tipo, tamanho, cor, peso, itálico etc.) deve ser controlado pelo CSS, não pelas tags HTML.
+
+📌 Por quê?
+O HTML deve cuidar do conteúdo e da estrutura.
+O CSS cuida da aparência visual.
+
+
+🔴 Exemplo errado (estilo direto no HTML):
+	<b>Texto em negrito</b>
+	<i>Texto em itálico</i>
+	<font color="red">Texto vermelho</font> <!-- tag obsoleta! -->
+	
+ - Usa tags visuais ou obsoletas (como <font>, <b>, <i>).
+ - Não é semântico.
+ - Difícil de manter e atualizar.
+
+✅ Exemplo certo (semântica + CSS):
+	<p class="destaque">Texto importante</p>
+
+	.destaque {
+		font-weight: bold;
+		font-style: italic;
+		color: red;
+		font-family: Arial, sans-serif;
+	}
+
+ - Usa <p> com uma classe (destaque) e define os estilos no CSS.
+ - Muito mais organizado e flexível.
+ 
+ 
+✅ Tag <font> era usada no HTML antigo para definir estilo de fonte, mas está obsoleta desde o HTML5.
+👉 Hoje não se recomenda usá-la. Em vez disso, usamos CSS.
+
+📛 ⚠️ <font> é obsoleto e não deve mais ser usado.
+Mesmo assim, aqui estão os atributos que ela usava:
+
+Atributo	Função											Exemplo
+color		Define a cor do texto							<font color="red">Texto</font>
+size		Define o tamanho da fonte (1 a 7)				<font size="4">Texto</font>
+face		Define o tipo da fonte (Arial, Verdana)			<font face="Arial">Texto</font> 
+
+=========== EXEMPLO ===========
+<html>
+  <head>
+    <title>Tilha HTML</title>
+  </head>
+
+  <body>
+    <strong>Programe</strong> seu futuro global agora<br />
+    <font color="red" face="Arial, Tahoma"
+      >Programe seu futuro global agora</font
+    ><br />
+    <font color="blue" face="Tahoma">Programe seu futuro global agora</font>
+  </body>
+</html>
+
+------------- Tag <div> e <span> -------------
+
+✅ Tags <div> e <span> são elementos genéricos de agrupamento em HTML, 
+usados para organizar e estilizar conteúdo com CSS ou manipular com JavaScript, mas não têm significado semântico próprio.
+
+🔹 <div> – Divisão de bloco
+- Tipo: Elemento de bloco (Não é visual na tela).
+- Uso: Agrupar grandes seções de conteúdo (textos, imagens, menus, formulários etc.)
+- Ocupa: Toda a largura disponível (quebra linha).
+
+🔹 <span> – Agrupamento em linha
+- Tipo: Elemento inline
+- Uso: Agrupar partes pequenas de conteúdo dentro de outra linha, para aplicar estilo ou manipulação
+- Ocupa: Apenas o espaço do conteúdo (não quebra linha).
+
+✅ Resumo
+Tag	Tipo	Quebra 		linha?		Serve para…
+<div>	     bloco		 Sim	Agrupar seções maiores
+<span>	     inline		 Não	Agrupar trechos pequenos (ex: uma palavra)
+
+
+** Planejar sempre seu site, de forma estrutrurada, de fora pra dentro e desenhar um prototipo antes.
+
+** um atalho do Emmet, muito usado no VS Code e outros editores de código para gerar HTML rapidamente: ul>li*3>a
+
+🔍 Explicando o atalho:
+Símbolo		Significado
+ >			elemento dentro de outro
+ *3			repete 3 vezes
+ ul			lista não ordenada
+ li			item da lista
+ a			link (âncora) dentro de li
+
+
+<html>
+  <head>
+    <title>Tilha HTML</title>
+    <style>
+      span {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="menu-lateral">
+      <div id="links">
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span>Dio</span>.me</p>
+  </body>
+</html>
+
+------------- Tag <fieldsets> -------------
+
+✅ Tag <fieldset> em HTML é usada para agrupar elementos de um formulário, 
+geralmente inputs relacionados entre si, e deixar mais organizado visualmente.
+
+✅ Para que serve?
+ - Organização de formulários
+ - Cria uma caixa com borda ao redor dos campos
+ - Pode ter uma legenda com a tag <legend>
+ 
+🧾 Exemplo básico:
+<form>
+  <fieldset>
+    <legend>Dados Pessoais</legend>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+  </fieldset>
+</form> 
+
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Tilha HTML</title>
+    <style>
+      .row {
+        margin: 5px;
+      }
+      label {
+        width: 100px;
+        text-align: right;
+        display: inline-block;
+        padding-right: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Formulário de cadasto</h1>
+    <div class="row">
+      <label for="nome">Nome:</label><input type="text" />
+      <label for="nome">E-mail:</label><input type="text" />
+    </div>
+
+    <div class="row">
+      <label for="nome">Profissão:</label><input type="text" />
+      <label for="nome">Empresa:</label><input type="text" />
+    </div>
+
+    <div class="row">
+      <label for="nome">Endereço:</label><input type="text" />
+      <label for="nome">Número:</label
+      ><input style="width: 30px" type="text" width="10" />
+    </div>
+
+    <div class="row">
+      <label for="nome">Bairro:</label><input type="text" />
+    </div>
+
+    <div class="row">
+      <label for="nome">Cidade:</label><input type="text" />
+      <label for="nome">Whatsapp:</label><input type="text" />
+    </div>
+
+    <div class="row">
+      <label for="nome">Linkedin:</label><input type="text" />
+      <label for="nome">Github:</label><input type="text" />
+    </div>
+
+    <div class="row">
+      <button type="reset">Limpar</button>
+      <button type="submit">Enviar Formulário</button>
+    </div>
+  </body>
+</html>
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Tilha HTML</title>
+    <style>
+      .row {
+        margin: 5px;
+      }
+      label {
+        width: 100px;
+        text-align: right;
+        display: inline-block;
+        padding-right: 5px;
+      }
+      fieldset {
+        margin: 15px;
+        border-radius: 10px;
+        border-color: lightgrey;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Formulário de cadasto</h1>
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <div class="row">
+        <label for="nome">Nome:</label><input type="text" />
+        <label for="nome">E-mail:</label><input type="text" />
+      </div>
+
+      <div class="row">
+        <label for="nome">Profissão:</label><input type="text" />
+        <label for="nome">Empresa:</label><input type="text" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Endereço</legend>
+      <div class="row">
+        <label for="nome">Endereço:</label><input type="text" />
+        <label for="nome">Número:</label
+        ><input style="width: 30px" type="text" width="10" />
+      </div>
+
+      <div class="row">
+        <label for="nome">Bairro:</label><input type="text" />
+      </div>
+
+      <div class="row">
+        <label for="nome">Cidade:</label><input type="text" />
+        <label for="nome">Whatsapp:</label><input type="text" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contato</legend>
+      <div class="row">
+        <label for="nome">Linkedin:</label><input type="text" />
+        <label for="nome">Github:</label><input type="text" />
+      </div>
+    </fieldset>
+
+    <div class="row">
+      <button type="reset">Limpar</button>
+      <button type="submit">Enviar Formulário</button>
+    </div>
+  </body>
+</html>
+
+
+
+------------- Tag <embed> -------------
+
+✅ Tag <embed> em HTML é usada para incorporar conteúdo externo dentro de uma página web, como:
+ - Vídeos
+ - Áudios
+ - PDFs
+ - Animações Flash (obsoleto)
+
+✅ Sintaxe básica:
+ <embed src="arquivo.pdf" type="application/pdf" width="600" height="400">
+ 
+ 🔍 Atributos comuns:
+Atributo	Descrição
+ src			Caminho do arquivo a ser exibido
+ type		Tipo de mídia (ex: application/pdf, video/mp4)
+ width		Largura do conteúdo
+ height		Altura do conteúdo
+
+🧾 Exemplo com PDF:
+<embed src="documento.pdf" type="application/pdf" width="100%" height="500px">
+
+🧾 Exemplo com vídeo:
+<embed src="video.mp4" type="video/mp4" width="640" height="360">
+
+ A tag <embed> ainda é usada e suportada nos navegadores modernos, mas é considerada menos recomendada em muitos 
+casos porque existem alternativas mais semânticas, seguras e acessíveis.
+📌 Então, não foi descontinuada, mas seu uso é limitado e desaconselhado para certos tipos de conteúdo.
+
+🆚 Quando não usar <embed>:
+Objetivo		Melhor usar:			Por quê?
+Exibir vídeo	<video>					Melhor controle, legendas, suporte nativo
+Exibir áudio	<audio>					Mesma vantagem que o <video>
+Incluir sites	<iframe>				Mais apropriado e seguro
+Exibir PDF		<iframe> ou <object>	Mais compatível em todos os navegadores
+
+** Atalho usando Emmet para gerar parágrafos com texto aleatório (Lorem Ipsum) é: p/lorem*3
+
+📌 Outras formas úteis:
+Atalho			Resultado
+lorem			Gera uma frase padrão de Lorem Ipsum
+lorem10			Gera 10 palavras aleatórias
+p>lorem20		Parágrafo com 20 palavras
+ul>li*5>lorem3	Lista com 5 itens, cada um com 3 palavras de Lorem Ipsum
+
+⚠️ Dica:
+Use o Tab logo após digitar o atalho no HTML (em VS Code) para expandir.
+
+------------- Tag <iframes> -------------
+
+✅ Tag <iframe> em HTML é usada para inserir uma página da web dentro de outra página — como 
+uma “janela” que carrega outro site, vídeo, mapa, formulário etc.
+
+✅ Exemplo básico:
+ <iframe src="https://www.example.com" width="600" height="400"></iframe>
+Isso vai exibir o site example.com dentro da sua página.
+
+🔍 Atributos principais:
+Atributo				Descrição
+src					URL da página que será exibida
+width				Largura do iframe
+height				Altura do iframe
+title				Texto descritivo para acessibilidade
+frameborder			Define a borda (0 para remover) — obsoleto, use CSS
+allowfullscreen		Permite tela cheia (em vídeos, por exemplo)
+loading="lazy"		Carrega o iframe apenas quando for visível (melhora desempenho)
+
+📌 Observações importantes:
+ - Nem todos os sites permitem ser exibidos via <iframe> (por segurança, podem bloquear).
+ - Para exibir conteúdo próprio (como um PDF, formulário ou página interna), funciona bem.
+ - Evite usar <iframe> para construir aplicações inteiras — é melhor para conteúdo externo ou embedado.
+ 
+------------- Resenha sobre cores -------------
+
+https://www.w3schools.com/tags/ref_colornames.asp
+
+
+ Cores no navegador
+ Você pode escolher por nome de cores ou também pelos seguintes valores:
+ 
+- RGB: Combinação de vermelho, verde e azul(Red, Green, Blue).
+- HEX: Combinação de vermelho, verde e azul, mas descrito em Hexadecimal.
+- HSL: Matiz (Hue), Saturação (Saturation) e Iluminação (Lighten). A matiz tem os valores onde 0 é vermelho, 120 verde, 240 azul.
+- RGBA: Mesmo que RGB, porém adicionado canal Alpha (Transparência)
+- HSLA: Mesmo que HSL, porém adicionado canal Alpha (Transparência)
+
+
+🎨 Formatos de cores em CSS:
+✅ 1. RGB – Red, Green, Blue
+ - Define cores com valores de 0 a 255 para cada componente.
+
+Exemplo:
+color: rgb(255, 0, 0); /* vermelho */
+
+
+✅ 2. HEX – Hexadecimal
+- Representa o RGB com valores hexadecimais.
+
+Exemplo:
+color: #ff0000; /* vermelho */
+
+
+✅ 3. HSL – Hue, Saturation, Lightness
+- Hue (matiz): cor em graus no círculo de cores (0 = vermelho, 120 = verde, 240 = azul).
+- Saturation (saturação): 0% (sem cor) a 100% (cor pura).
+- Lightness (luminosidade): 0% (preto) a 100% (branco).
+
+Exemplo:
+color: hsl(0, 100%, 50%); /* vermelho */
+
+
+✅ 4. RGBA – RGB com Alpha (transparência)
+- O quarto valor (Alpha) vai de 0 (transparente) a 1 (opaco).
+
+Exemplo:
+color: rgba(255, 0, 0, 0.5); /* vermelho com 50% de opacidade */
+
+
+✅ 5. HSLA – HSL com Alpha
+- Mesmo que HSL, mas com canal Alpha.
+
+Exemplo:
+color: hsla(240, 100%, 50%, 0.3); /* azul com 30% de opacidade */
+

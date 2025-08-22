@@ -1,0 +1,615 @@
+------------- Trabalhando com Formulários em HTML -------------
+
+ HTML I: Conceitos Básicos
+ 
+ Percurso:
+ - Tag <form>
+ - Tag <input>
+ - Tag <checkbox> e <radio>
+ - Tag <buttom>
+ - Tag <select>
+ - Tag <textarea>
+ 
+ Rever algumas Tags HTML. Entender como funcionam os formulários de uma website e como uma 
+informação enviada través de formularios chega ate o servidor.
+
+
+------------- Tags Form -------------
+
+📝 Tag <form> — Formulário em HTML
+	- A tag <form> é usada para criar formulários — ou seja, áreas onde o usuário pode preencher informações (como nome, e-mail, senha, etc.) e enviar para o site ou sistema.
+
+✅ Para que serve?
+	- Reunir campos de entrada: texto, senha, número, checkbox, botão etc.
+	- Enviar dados para o servidor (ou outro lugar).
+ 
+ 
+🔑 Explicando os principais elementos:
+ Parte				O que faz
+<form>			Início e fim do formulário
+action=""		Para onde os dados serão enviados (página ou servidor)
+method=""		Como os dados serão enviados (get ou post)
+<input>			Campo de entrada (texto, email, número, etc.)
+<label>			Rótulo que aparece ao lado do campo
+<submit>		Botão para enviar o formulário
+
+✅ Resumo:
+	- <form> = "pacote" de campos para preencher e enviar.
+	- Dentro dele vão os <input>, <textarea>, <select>, etc. 
+	
+
+📝 Quando um formulário tem entrada de dados, ele trabalha junto com:
+1. 🖥️ Servidor
+	- Recebe os dados enviados pelo formulário.
+	- Processa esses dados (ex: validar, salvar, responder etc.).
+	- É feito com linguagens como PHP, C# (ASP.NET), Node.js, Python, etc.
+
+2.🗄️ Banco de Dados
+	- Armazena os dados recebidos (ex: nome, e-mail, senha).
+	- Exemplo: MySQL, PostgreSQL, Oracle, SQL Server.
+
+✅ Exemplo real:
+Um formulário de cadastro:
+	- O usuário preenche: nome, e-mail, senha.
+	- Clica em Enviar.
+	- Os dados vão para o servidor.
+	- O servidor salva os dados no banco de dados.
+	- O usuário recebe uma mensagem: "Cadastro realizado com sucesso!"	
+	
+📌 Ainda é comum ver formulários HTML com action="" (vazio).
+	- Mas isso não significa que está errado. Veja por quê:
+
+O que significa action=""?
+	- Um formulário com action="" envia os dados para a própria página atual.
+	- Pode ser usado quando o servidor trata o envio no mesmo arquivo da página, ou quando JavaScript vai capturar e processar os dados.
+	
+	
+✅ Principais type da tag <input>:
+
+Type:			O que faz:
+text			Campo de texto comum
+password		Campo para senha (oculta os caracteres)
+email			Campo para e-mail (validação automática)
+number			Campo para número (com setinhas ↑↓)
+tel				Campo para telefone (teclado numérico no celular)
+url				Campo para links/endereços de site
+search			Campo de busca (estilo Google)
+date			Seleciona uma data (calendário)
+time			Seleciona um horário
+datetime-local	Data e hora (sem fuso horário)
+color			Seletor de cor (mostra uma paleta)
+file			Seleciona um arquivo para envio
+checkbox		Caixa de seleção (vários itens)
+radio			Botão de seleção única (escolher uma opção)
+range			Controle deslizante (barra de valor)
+hidden			Campo invisível (usado para enviar dados escondidos)
+submit			Botão para enviar o formulário
+reset			Botão para limpar todos os campos
+button			Botão normal (usado com JS ou personalizado)	
+
+
+✅ O que é name="name" na tag <input>?
+No HTML, o atributo name serve para identificar o dado que será enviado quando o formulário for processado.
+
+🧠 Em resumo: Nome: <input type="text" name="name" /><br />
+	- A palavra "Nome:" é só um texto comum, como se fosse uma legenda manual.
+	- O que o usuário digita na caixinha, vai ser enviado com o nome definido no atributo name.
+	- type="text" → tipo do campo (texto).
+	- name="name" → identificador do campo (usado no envio dos dados).
+	- O valor digitado vai com o nome que está no atributo name.
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Formulario de Cadastro</title>
+  </head>
+  <body>
+
+    <form name="signup" action="http://meusitecom.br/signup" method="GET">
+      Nome: <input type="text" name="name" /><br />
+      Idade: <input type="number" name="age" /><br />
+      Senha: <input type="password" name="password" /><br />
+      Email: <input type="email" name="email" /> <br />
+      Telefone: <input type="number" name="Telefone" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
+
+==============================
+
+✅Se você não colocar o method, o HTML assume automaticamente o método GET.
+
+✅ Explicando seu formulário: <form name="signup" action="http://meusitecom.br/signup">
+	- name="signup" → apenas um nome identificador interno para o formulário (opcional).
+	- action="http://meusitecom.br/signup" → é o endereço do servidor para onde os dados vão ser enviados.
+	- Como não foi especificado o method, o padrão é GET, ou seja:	os dados serão enviados pela URL (como parâmetros).
+	
+📌 Estrutura dessa URL:
+1. http://meusitecom.br/signup
+	→ É o endereço do servidor e o caminho (rota) para onde os dados vão.
+
+2. ?name=Alessandra+Lucas&age=21...
+	→ É a query string: os dados que o formulário está enviando.
+
+Quando você clicar em enviar ele envia os dados para o servidor:
+	http://meusitecom.br/signup?name=Alessandra+Lucas&age=37&password=123456&email=alessandra%40hotmail.com&Telefone=11876234830
+
+🧩 Cada parte da query string:
+Campo (name)	Valor preenchido
+name			Alessandra Lucas
+age				21
+password		123456
+email			alessandra%40hotmail.com
+Telefone		11876234830
+
+- O + é usado no lugar do espaço.
+- O %40 é o símbolo @ codificado na URL.
+
+*********************************************************************
+
+✅Se você não colocar o method, o HTML assume automaticamente o método GET.
+
+📌 Algumas melhorias ou ajustes que você pode considerar:
+	- Adicionar method="POST"
+	- Para evitar expor dados sensíveis na URL (como a senha):
+	- <form name="signup" action="http://meusitecom.br/signup" method="POST">		
+
+📌 Por que POST é mais seguro?
+	- Porque dados como senha, e-mail e telefone não ficam visíveis na URL, evitando exposição ou cache indesejado.
+	- Embora não seja criptografado por padrão, ele é mais adequado para formulários (especialmente se usado com HTTPS).	
+	
+	
+✅ Diferença entre GET e POST:
+Característica						GET											POST
+Envio dos dados						Pela URL (visível)							Pelo corpo da requisição (oculto)
+Aparece na barra do navegador?		✅ Sim — ?name=Ana&idade=30					❌ Não
+Segurança							Menos seguro — dados visíveis				Mais seguro — ideal para senhas, e-mails etc.
+Tamanho dos dados					Limitado (geralmente até 2048 caracteres)	Pode enviar muitos dados
+Usado para...						Buscar informações, abrir páginas			Enviar, salvar ou atualizar informações
+Pode ser salvo como favorito?		✅ Sim										❌ Não	
+	
+*********************************************************************
+
+✅ autocomplete="":
+Atributo autocomplete serve para ativar ou desativar o preenchimento automático de campos em formulários pelo navegador. 
+Ele ajuda o navegador a sugerir informações já usadas antes, como nome, e-mail, telefone etc.
+
+✅ Exemplo com autocomplete="on":
+O navegador pode sugerir dados salvos (ex: nome completo, e-mail já usados).
+
+<form autocomplete="on">
+  Nome: <input type="text" name="name" /><br />
+  Email: <input type="email" name="email" /><br />
+</form>
+
+❌ Exemplo com autocomplete="off":
+O navegador não vai sugerir preenchimento automático.
+
+<form autocomplete="off">
+  Nome: <input type="text" name="name" /><br />
+  Email: <input type="email" name="email" /><br />
+</form>
+
+Pode ser usado:
+	- No <form> (controla todos os campos),
+	- Ou diretamente em um <input> individual.
+	
+=========== EXEMPLO ===========
+	
+<html>
+  <head>
+    <title>Formulario de Cadastro</title>
+  </head>
+  <body>
+
+    <form name="signup" action="http://meusitecom.br/signup" method="POST">
+      Nome: <input type="text" name="name" /><br />
+      Idade: <input type="number" name="age" /><br />
+      Senha: <input type="password" name="password" autocomplete="off" /><br />
+      Email: <input type="email" name="email" autocomplete="on"/> <br />
+      Telefone: <input type="number" name="Telefone" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>	
+
+==============================
+
+✅ Eventos On.
+
+Os eventos on no HTML são atributos que permitem executar um código JavaScript quando algo acontece na página, como um clique, um movimento do mouse, uma tecla pressionada etc.
+Eles sempre começam com o prefixo on e são seguidos pelo tipo de evento.
+
+✅ Exemplo simples:
+<button onclick="alert('Você clicou!')">Clique aqui</button>
+
+Neste exemplo:
+	- onclick é o evento.
+	- "alert('Você clicou!')" é o código JavaScript que será executado quando o botão for clicado.
+	
+🧠 Alguns dos eventos on mais usados:
+Evento			Quando acontece
+onclick			Quando o usuário clica em um elemento
+onmouseover		Quando o mouse passa por cima
+onmouseout		Quando o mouse sai de cima do elemento
+onchange		Quando o valor de um input muda
+onkeydown		Quando uma tecla é pressionada
+onkeyup			Quando uma tecla é solta
+onsubmit		Quando um formulário é enviado
+onload			Quando a página ou uma imagem é carregada	
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Formulario de Cadastro</title>
+  </head>
+  <body>
+
+    <form
+      name="signup"
+      onsubmit="alert('Enviei um Formulario')"
+      action="http://meusitecom.br/signup"
+      method="POST"
+    >
+      Nome: <input type="text" name="name" /><br />
+      Idade: <input type="number" name="age" /><br />
+      Senha: <input type="password" name="password" autocomplete="off" /><br />
+      Email: <input type="email" name="email" autocomplete="on" /> <br />
+      Telefone: <input type="number" name="Telefone" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
+
+
+------------- Tags Input e seus Tipos -------------
+
+✅ <input>	
+	- O elemento <input> no HTML é usado para criar campos de entrada de dados em formulários.
+	- Ele pode aceitar diferentes tipos de dados, dependendo do valor do atributo type.
+	
+✅ Principais type da tag <input>:
+
+Type=" "		O que faz:
+text			Campo de texto comum
+password		Campo para senha (oculta os caracteres)
+email			Campo para e-mail (validação automática)
+number			Campo para número (com setinhas ↑↓)
+tel				Campo para telefone (teclado numérico no celular)
+url				Campo para links/endereços de site
+search			Campo de busca (estilo Google)
+date			Seleciona uma data (calendário)
+time			Seleciona um horário
+datetime-local	Data e hora (sem fuso horário)
+color			Seletor de cor (mostra uma paleta)
+file			Seleciona um arquivo para envio
+checkbox		Caixa de seleção (vários itens)
+radio			Botão de seleção única (escolher uma opção)
+range			Controle deslizante (barra de valor)
+hidden			Campo invisível (usado para enviar dados escondidos)
+submit			Botão para enviar o formulário
+reset			Botão para limpar todos os campos
+button			Botão normal (usado com JS ou personalizado)		
+
+
+✅ O atributo for=""
+No HTML, o atributo for="" na tag <label> serve para ligar a <label> a um campo <input> específico. 
+Ele melhora a acessibilidade e permite que, ao clicar no texto da <label>, o foco vá direto para o campo correspondente.
+
+Como funciona:
+	- O for deve ter o mesmo valor que o id do <input>.
+
+Exemplo correto:
+<form>
+  <label for="nome">Digite seu nome:</label>
+  <input type="text" id="nome" />
+</form>
+
+Neste exemplo:
+	- O label está associado ao input com id="nome".
+	- Se o usuário clicar em "Digite seu nome:", o cursor vai direto pro campo de texto.
+	
+	
+✅ <input type="number"> com as limitações min e max.  
+	<input type="number" min="0" max="10" />
+	
+	- min="0" → o valor mínimo permitido é 0
+	- max="10" → o valor máximo permitido é 10
+	- *** O usuário não poderá digitar (ou usar as setas) para inserir valores menores que 0 ou maiores que 10.
+	
+⚠️ Importante:
+- Mesmo com essas restrições, um usuário pode burlar isso manualmente no navegador.
+- Por isso, se você for tratar os dados no backend (PHP, C#, etc.), também é importante validar o valor lá.	
+
+
+📌 O que é o atributo step no <input type="number">?
+O atributo **step** define o intervalo permitido entre os valores numéricos que o usuário pode inserir.
+
+⚠️ Sem step (padrão é 1):
+Se você não usar o step, ele considera step="1" por padrão, então só aceita inteiros.
+
+Se quiser limitar também a quantidade de casas decimais, você pode usar o atributo step:
+	<input type="number" min="0" max="10" step="1" />
+
+	- step="1" → só aceita números inteiros 0, 1, 2, 3...
+	- step="0.1" → aceita casas decimais de 0.1 em 0.1
+	- step="5" → pula de 5 em 5: 0, 5, 10, 15...
+	- step="2" → só aceita números pares 0, 2, 4... ou 1, 3, 5 (se min=1)
+	- any → Aceita qualquer valor, até fora dos padrões (1.5, 2.3, 99.999...)
+	
+⚠️ Sobre step="any":
+Use quando você quiser liberdade total nos valores numéricos — especialmente quando não sabe o intervalo (ex: valores financeiros, peso, altura, etc.).	
+
+
+⚠️ Dica importante:
+Mesmo com step, o usuário pode digitar manualmente um valor inválido. Então:
+	- Navegadores geralmente bloqueiam o envio do formulário.
+	- Mas você deve validar também no backend, se for usar em um sistema real.
+	
+	
+Site: https://www.w3schools.com/tags/tag_input.asp		
+	
+=========== EXEMPLO ===========	
+	
+ <body>
+    <form action="">
+      <label for="nome">Digite nomo completo: </label
+      ><input type="text" /><br />
+      <label for="numero">Number: </label
+      ><input type="number" min="0" max="50" step="3" /><br />
+      <button>Enviar</button><br />
+      <label for="range">Selecione: </label><input type="range" /><br />
+      <label for="range">Selecione: </label
+      ><input type="range" min="0" max="80" /><br />
+      <label for="color">Cor: </label><input type="color" /><br />
+      <label for="email">E-mail: </label><input type="email" /><br />
+      <label for="date">Data: </label><input type="date" /><br />
+      <label for="week">Semana: </label><input type="week" /><br />
+      <label for="month">Mes: </label><input type="month" /><br />
+      <label for="url">Url: </label><input type="url" /><br />
+      <label for="checkbox">Checkbox: </label><input type="checkbox" /><br />
+      <label for="radio">Radio:</label
+      ><input type="radio" name="aceita" /><input
+        type="radio"
+        name="aceita"
+      /><br />
+      <label for="hiddne">Hiddne: </label
+      ><input type="hidden" name="aceita" /><br />
+      <label for="file">File: </label><input type="file" /><br />
+      <label for="search">Busca: </label><input type="search" /><br />
+      <label for="button">Botão: </label
+      ><input type="submit" value="Enviar" /><br />
+    </form>
+  </body>	
+
+------------- Checkbox e Radio Button -------------
+
+✅ Checkbox e Radio Button
+No HTML, usamos os campos checkbox e radio para permitir escolhas do usuário em formulários:
+
+🟩 Checkbox (type="checkbox")
+	- Permite selecionar várias opções ao mesmo tempo.
+	- Neste exemplo, o cliente pode escolher opcionais extras na pizza (queijo, cebola, etc.).
+	- O atributo disabled (em peperoni) impede que o item seja selecionado.
+	- name="opicional[]" → os valores selecionados serão enviados como lista.
+	- value="queijo" → é o valor enviado se essa opção for marcada.
+	
+🔘 Radio Button (type="radio")
+	- Permite apenas uma escolha por grupo.
+	- É usado, por exemplo, para escolher a borda ou a bebida.	
+	- Todos os radios com o mesmo name fazem parte do mesmo grupo.
+	- O usuário só pode selecionar uma opção por grupo.
+	
+🧾 O que será enviado ao clicar “Enviar pedido”:
+	- O navegador vai mandar os checkboxes marcados e a opção escolhida de cada grupo de radio.
+	- Vai para: http://meusitecom.br/signup?opicional[]=queijo&...&Borda=sim&Bebidas=suco	
+
+<body>
+    <form method="GET" action="http://meusitecom.br/signup">
+      <h3>Você selecionou: Pizza de Calabresa.</h3>
+      <p>Quais opcionais você deseja:</p>
+      <input type="checkbox" name="opicional[]" value="queijo" /> + queijo
+      <br />
+      <input type="checkbox" name="opicional[]" value="calabresa" /> + calabresa
+      <br />
+      <input type="checkbox" name="opicional[]" value="cebola" /> + cebola
+      <br />
+      <input type="checkbox" name="opicional[]" value="azeitona" /> + azeitona
+      <br />
+      <input type="checkbox" disabled name="opicional[]" value="peperoni" /> +
+      peperoni
+      <br />
+
+      <p>Borda recheada:</p>
+      <input type="radio" name="Borda" value="sim" />Sim <br />
+      <input type="radio" name="Borda" value="nao" />Não <br />
+
+      <p>Bebidas:</p>
+      <input type="radio" name="Bebidas" value="suco" />Suco <br />
+      <input type="radio" name="Bebidas" value="refrigerante" />Refrigerante
+      <br />
+      <input type="radio" name="Bebidas" value="agua" />Água <br />
+      <input type="radio" name="Bebidas" value="nenhum" />Nenhum <br />
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+</body>	
+
+------------- Button e seus Tipos -------------
+
+✅ 1. type="submit"
+- Função: Envia o formulário para o servidor.
+- Comportamento padrão: Se você omitir o type, o botão assume automaticamente submit.
+
+	<button type="submit">Enviar</button>
+	<!-- ou -->
+	<input type="submit" value="Enviar">
+	
+📌 Observações:
+	- Boyão teclado Enter aciona o submit.
+	- Mesmo sem clicar com o mouse.
+	- Mesmo se o type="submit" estiver omitido.	
+	
+✅ 2. type="reset"
+- Função: Limpa todos os campos do formulário, voltando ao valor original (normalmente vazio).	
+	
+	<button type="reset">Limpar</button>
+	<!-- ou -->
+	<input type="reset" value="Limpar">
+	
+✅ 3. type="button"
+- Função: Não faz nada por conta própria. É usado com JavaScript para alguma ação personalizada (ex: abrir janela, validar dados, etc.).	
+
+	<button type="button" onclick="alert('Você clicou!')">Clique</button>
+	<!-- ou -->
+	<input type="button" value="Clique" onclick="alert('Você clicou!')">
+	
+	
+Resumo rápido:
+Tipo		Ação							Requer JavaScript?
+submit		Envia o formulário				❌
+reset		Limpa os campos do formulário	❌
+button		Não faz nada sem JavaScript		✅	
+
+
+✅ Para que serve o onsubmit?
+O onsubmit é um evento do HTML usado para executar uma função JavaScript quando o formulário está prestes a ser enviado.
+
+Ele é usado para:
+	- Validar dados do formulário antes do envio.
+	- Impedir o envio se os dados estiverem incorretos.
+	- Executar uma ação personalizada ao enviar.
+
+📌 Onde usar?
+Você usa onsubmit na tag <form>, e ele se conecta a uma função JavaScript.
+
+=========== EXEMPLO ===========	
+<html>
+  <head>
+    <title>Formulario de Cadastro</title>
+  </head>
+
+  <body>
+    <form method="GET" action="http://meusitecom.br/signup">
+      <label for="name">Nome: </label>
+      <input type="text" id="name" name="name" /><br />
+
+      <label for="age">Idade: </label>
+      <input type="number" id="age" name="age" /><br />
+
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" /><br />
+
+      <button type="button" onclick="alert('Clique aqui')">Clicavel</button>
+      <button type="button" onmouseover="alert('Passei aqui')">
+        Passe o mouse aqui
+      </button>
+      <button type="reset">Limpar</button>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
+	
+------------- Select e seus Tipos -------------	
+
+✅ <select> (ou select box) no HTML é um menu suspenso (dropdown) usado em formulários para o usuário escolher uma opção (ou várias, se configurado).
+
+✅ Estrutura básica:
+<label for="fruta">Escolha uma fruta:</label>
+<select name="fruta" id="fruta">
+  <option value="maçã">Maçã</option>
+  <option value="banana">Banana</option>
+  <option value="uva">Uva</option>
+</select>
+
+🧠 O que cada parte faz:
+	- <select>: cria o campo de seleção.
+	- name="fruta": nome usado para enviar o dado.
+	- <option>: cada item dentro do menu.
+	- value="...": valor que será enviado quando o usuário escolher aquela opção.
+	
+🖱️ Resultado visual:
+Quando o usuário clica, vê uma lista:
+
+▼ Escolha uma fruta:
+   Maçã
+   Banana
+   Uva	
+   
+✅ O que o atributo multiple faz no <select>:
+Quando você adiciona multiple em um <select>, o usuário pode selecionar mais de uma opção ao mesmo tempo.
+
+<select name="role" id="role" multiple>
+  ...
+</select>
+
+⚠️ Importante:
+	- Para que os vários valores sejam enviados corretamente, é comum usar [] no nome:
+	- <select name="role[]" id="role" multiple>
+   
+=========== EXEMPLO ===========	   
+   
+<html>
+  <head>
+    <title>Formulario de Cadastro</title>
+  </head>
+
+  <body>
+    <form method="GET" action="http://meusitecom.br/signup">
+      <label for="name">Nome: </label>
+      <input type="text" id="name" name="name" /><br />
+
+      <label for="name2">Cargo: </label>
+      <select name="role" id="role">
+        <option value="">Selecione uma opção</option>
+        <option value="administrativo">Administrativo</option>
+        <option value="gerente">Gerente</option>
+        <option value="diretor">Diretor</option>
+        <option value="presidente">Presidente</option></select
+      ><br />
+
+      <label for="name3">Assunto: </label>
+      <input type="text" id="name3" name="text" /><br />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>   
+
+
+------------- Texarea -------------	
+
+A tag <textarea> no HTML é usada para criar um campo de texto grande, onde o usuário pode digitar múltiplas linhas, como em uma caixa de mensagem, comentário ou descrição.
+
+✅ Exemplo básico:
+<label for="mensagem">Mensagem:</label><br>
+<textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+
+🧠 O que cada parte faz:
+	- <textarea>: cria a caixa de texto.
+	- name="mensagem": nome usado no envio do formulário.
+	- rows: número de linhas visíveis (altura).
+	- cols: número de colunas visíveis (largura).
+	- </textarea>: fecha a tag (diferente de <input> que é fechada sozinho).
+	- Pode ter texto padrão dentro: <textarea>Texto inicial aqui</textarea>
+	
+🖱️ Visual:
+O usuário verá uma caixa de digitação grande, que aceita Enter para pular linha.	
+
+✅ Dica:
+Também funciona com placeholder:
+<textarea name="comentario" placeholder="Escreva seu comentário..."></textarea>
+
+
+✅ rows e cols no <textarea> servem para definir o tamanho visível da caixa de texto.
+📌 Explicando:
+	- rows → define a altura, ou seja, quantas linhas de texto aparecem visivelmente.
+	- cols → define a largura, ou seja, quantos caracteres cabem por linha (aproximadamente).
+	
+📝 Resultado:
+É só visual. O campo pode ter mais texto do que cabe — ele vai mostrar barras de rolagem se for necessário.	

@@ -1,0 +1,414 @@
+------------- Criando Tabelas ------------- 
+
+Apresentação
+ 
+ Percurso:
+ - Sobre tabelas
+ - Tag <table>
+ - Tag <tr>
+ - Tag <td> e <tr>
+ - Tag <tbbody>, <thead> e <tffot>
+ - Estilizando tabelas
+ 
+ 
+------------- Sobre tabelas -------------
+ 
+ Usamos tabelas no HTML quando precisamos exibir dados tabulares, ou seja, 
+informações organizadas em linhas e colunas — como planilhas, relatórios ou comparativos.
+ O cruzamento da linha com a coluna, se chama celula.
+
+Exemplos de uso:
+ - Listas de produtos com preço e quantidade.
+ - Horários de aulas ou voos.
+ - Resultados de pesquisas ou estatísticas.
+ - Comparativos (ex.: tabela de planos).
+ 
+ Principais tags da tabela:
+ - <table> → define a tabela.
+ - <tr> → define uma linha (table row).
+ - <th> → define um cabeçalho de coluna (table header).
+ - <td> → define uma célula de dado (table data).
+ - <caption> → título da tabela.
+ - <thead>, <tbody>, <tfoot> → separam cabeçalho, corpo e rodapé.
+ 
+💡 Dica:
+Hoje, tabelas não devem ser usadas para criar layouts (isso era comum antigamente), mas apenas para dados organizados.
+Para layout, usamos CSS Grid ou Flexbox.
+ 
+------------- Tag <table> -------------
+
+✅ Tag <table> é usada em HTML para criar tabelas, ou seja, exibir informações organizadas em linhas e colunas.
+ Ela funciona como um “container” para as outras tags que formam a tabela (<tr>, <th>, <td>, etc.).
+ 
+💡 Dicas:
+ - Use CSS para estilizar tabelas em vez de depender de atributos como border.
+ - Não use <table> para criar layout de página — apenas para dados tabulares.
+ 
+ 
+ Tag <table> em si tem poucos atributos nativos no HTML moderno, porque a maior parte da formatação hoje é feita via CSS.
+ Mesmo assim, existem atributos antigos (ainda suportados, mas considerados obsoletos) e atributos globais.
+
+📌 Atributos específicos da <table> (HTML antigo, pouco usados hoje):
+Atributo		Função													Status
+border			Define a largura da borda (em pixels).					Obsoleto (use CSS border).
+cellpadding		Espaçamento interno das células.						Obsoleto (use CSS padding).
+cellspacing		Espaçamento entre células.								Obsoleto (use CSS border-spacing).
+width			Largura da tabela.										Obsoleto (use CSS width).
+height			Altura da tabela.										Obsoleto (use CSS height).
+align			Alinhamento da tabela (esquerda, centro, direita).		Obsoleto (use CSS margin).
+bgcolor			Cor de fundo.											Obsoleto (use CSS background-color).
+summary			Texto descrevendo a tabela (acessibilidade).			Obsoleto no HTML5.
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Trabalhando com Tabelas</title>
+  </head>
+
+  <body>
+    <table border="1" width="200">
+      <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+      </tr>
+
+      <tr>
+        <td>Diogo</td>
+        <td>37</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+------------- Tag <tr> -------------
+
+✅ Tag <tr> (table row) é usada dentro de uma <table> para definir uma linha da tabela.
+ Ela não contém dados diretamente, mas sim outras tags como <th> (cabeçalho) ou <td> (célula de dados).
+ 
+ 📌 Sintaxe básica:
+<table border="1">
+  <tr>
+    <th>Produto</th>
+    <th>Preço</th>
+    <th>Quantidade</th>
+  </tr>
+  <tr>
+    <td>Notebook</td>
+    <td>R$ 3.500</td>
+    <td>5</td>
+  </tr>
+</table>
+
+
+🔹 Aqui temos duas linhas:
+1. A primeira com <th> (cabeçalhos).
+2. A segunda com <td> (dados).
+
+
+📌 Principais atributos (específicos e globais):
+ O <tr> praticamente só usa atributos globais, pois o HTML5 deixa a formatação para o CSS.
+ - id → identifica a linha.
+ - class → aplica classes CSS.
+ - style → estilo inline.
+ - title → dica ao passar o mouse.
+ - No HTML antigo (obsoleto, mas ainda suportado):
+ - align → alinhamento do conteúdo (left, center, right).
+ - bgcolor → cor de fundo.
+
+=========== EXEMPLO =========== 
+
+1. O que ele faz: table tr:nth-child(even) → aplica a cor de fundo aqua nas linhas pares (efeito "zebra").
+2. table tr:hover td → quando o mouse passa sobre uma linha, todas as células (<td>) dessa linha ficam cinza-escuro.
+
+💡 Apenas duas observações para deixar mais organizado e moderno:
+ - Separar a parte do cabeçalho usando <thead> e <tbody> (melhor semântica).
+ - Usar CSS para bordas e largura, em vez do atributo border="1" e width="300".
+ 
+<html>
+  <head>
+    <title>Trabalhando com Tabelas</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 300px;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      table tr:nth-child(even) {
+        background-color: aqua;
+      }
+      table tr:hover td {
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Notebook</td>
+          <td>R$ 3.500</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Mouse</td>
+          <td>R$ 700</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Monitor</td>
+          <td>R$ 2.500</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Teclado</td>
+          <td>R$ 900</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>CPU</td>
+          <td>R$ 900</td>
+          <td>2</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+------------- Tag <td> e <tr> -------------
+
+✅ No HTML, as tags <tr> e <td> servem para montar tabelas, mas têm funções diferentes:
+
+ - <tr> (table row) → representa uma linha da tabela.
+ Tudo que estiver dentro de <tr> será exibido lado a lado (em colunas).
+Exemplo:
+
+<tr>
+  <td>Notebook</td>
+  <td>R$ 3.500</td>
+  <td>5</td>
+</tr>
+
+
+ Aqui temos uma linha com 3 colunas.
+ - <td> (table data) → representa uma célula de dado dentro da linha.
+ Cada <td> corresponde a uma coluna daquela linha.
+Exemplo:
+
+<td>Notebook</td> <!-- 1ª coluna -->
+<td>R$ 3.500</td> <!-- 2ª coluna -->
+<td>5</td>         <!-- 3ª coluna -->
+
+
+💡 Resumindo:
+ - <tr> = linha.
+ - <td> = célula (dado) dentro da linha.
+ - Se quiser cabeçalhos, use <th> no lugar de <td> na primeira linha.
+ 
+------------- Tag <tbody>, <thead> e <tfoot> -------------
+
+1. <thead> — Cabeçalho da tabela
+ - Contém as linhas do cabeçalho.
+ - Normalmente, dentro dele se usam <th> para indicar títulos das colunas.
+ - Fica no topo da tabela.
+ 
+Exemplo: 
+<thead>
+  <tr>
+    <th>Produto</th>
+    <th>Preço</th>
+    <th>Quantidade</th>
+  </tr>
+</thead>
+ 
+ 
+2. <tbody> — Corpo da tabela
+ - Contém as linhas principais com os dados.
+ - É onde ficam as informações de fato. 
+ 
+Exemplo:
+<tbody>
+  <tr>
+    <td>Notebook</td>
+    <td>R$ 3.500</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Mouse</td>
+    <td>R$ 50</td>
+    <td>20</td>
+  </tr>
+</tbody> 
+
+
+3. <tfoot> — Rodapé da tabela
+ - Contém informações de resumo ou totalização.
+ - Fica no fim, mas no código HTML pode vir antes do <tbody> sem mudar a exibição, pois o navegador posiciona no final automaticamente.
+
+Exemplo:
+<tfoot>
+  <tr>
+    <td colspan="2">Total</td>
+    <td>25</td>
+  </tr>
+</tfoot>
+ 
+=========== EXEMPLO =========== 
+ 
+<html>
+  <head>
+    <title>Trabalhando com Tabelas</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 300px;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      table tr:nth-child(even) {
+        background-color: aqua;
+      }
+      table tr:hover td {
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <caption>
+          Tabela de gatos
+        </caption>
+        <tr>
+          <th title="Nome completo">Nome</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gatito</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Keaty</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Simon</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Flor</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Thomas</td>
+          <td>19</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Tota Gatos</td>
+          <td>5</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
+
+
+------------- Estilizando tabelas -------------
+ Usando CSS para melhorar o visual. Conteudo básico.
+ 
+ Diferença entre os atributos cellpadding e cellspacing da <table>?
+ R: cellpadding = espaço da borda da célula para o conteúdo e cellspacing = espaço entre as células.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow 
+
+<html>
+  <head>
+    <title>Trabalhando com Tabelas</title>
+    <style>
+      table {
+        -webkit-box-flex: 12px 14px 6px 5px rgba(0, 0, 0, 0.24);
+        box-shadow: 12px 14px 6px 5px rgba(0, 0, 0, 0.24);
+        border: solid 1px gray;
+      }
+      table thead th {
+        background-color: black;
+        color: white;
+      }
+      table tfoot td {
+        background-color: lightgray;
+      }
+      table tbody tr:nth-child(even) td {
+        background: #f1f1f1;
+      }
+      table tbody tr:hover td {
+        background: #e9e9e9;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table width="250" align="center" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Minha tabela de Gatos</th>
+        </tr>
+        <tr>
+          <th title="Nome completo">Nome</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Gatito</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Keaty</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Simon</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Flor</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Thomas</td>
+          <td>19</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>Tota Gatos</td>
+          <td>5</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
