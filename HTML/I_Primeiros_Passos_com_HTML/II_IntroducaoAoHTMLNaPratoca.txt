@@ -1,0 +1,513 @@
+----------- Apresentando o Curso -----------
+
+Introdução:
+- Ferramentas utilizadas
+- Usando o Inspetor de Elementos
+- Estrutura básica do HTML
+- Falando sobre Tags
+- Atributos básicos
+- Executabdo uma página HTML
+- Textos
+- Listas ordenadas e não ordenadas
+- Links
+
+ Aprender a instalar e configurar o anbiente de desenvolvimento.
+ Entender o funcionamento do inspetor de elementos no navegador e criar sua peimeira página HTML.
+
+----------- Ferramentas Utilizadas -----------
+
+** Baixar o visual Studio Code: https://code.visualstudio.com/docs/?dv=win64user
+** Ou pelo Microsoft Store ✓
+
+**Configurando para Portugues
+- Pressione Ctrl+Shift+P para abrir a Paleta de Comandos (campo pesquisa) e digite "display" (>display) para filtrar e exibir o comando Configurar Idioma de Exibição.
+- Pressione Enter e uma lista de idiomas instalados por localidade será exibida, e você pode escolher qual deseja da lista ou baixar outras: Português (Brasil).
+- Lembre de reiniciar o VSCode para que as modificações surtam efeito.
+
+
+----------- Inspetor de Elementos -----------
+
+🛠️ Para que serve o Inspetor de Elementos?
+É uma ferramenta dos navegadores (Chrome, Edge, Firefox) que permite:
+
+✅ 1. Visualizar o código da página (HTML, CSS, JS)
+	- Você consegue ver como a página foi construída.
+
+✅ 2. Testar mudanças na hora (sem mexer no código real)
+	- Alterar cores, textos, tamanhos e ver o resultado ao vivo.
+
+✅ 3. Encontrar erros
+	- Ver mensagens de erro no console (útil para desenvolvedores).
+
+✅ 4. Verificar performance e segurança
+	- Analisar tempo de carregamento, rede e segurança do site.
+
+💡 Resumindo:
+É uma ferramenta para analisar, editar e testar qualquer página da web direto no navegador.
+
+👉 Atalho para abrir:
+Clique direito na página ➡️ “Inspecionar”
+ou
+Tecla F12
+ou
+Crome > 3 pontos : Mais ferramentas > Ferramentas do Desenvolvedor
+
+
+----------- Estrutura Básica do HTML -----------
+
+Criação de pasta e definição do caminho.
+	C:\Users\alessandra.gomes\Cursos\DIO\HTML\Aula_01\SITE
+	
+🗂️ Pasta do SITE → Novo Arquivo → Digite: index.html
+✅ Pasta do SITE:
+	- Crie uma pasta para guardar todos os arquivos do site (HTML, CSS, imagens, scripts).
+
+✅ Novo Arquivo:
+	- Dentro da pasta, crie um arquivo chamado index.html.
+
+✅ index.html:
+	- É o arquivo principal do site.
+	- Quando alguém acessa o site, o navegador procura automaticamente por esse arquivo para abrir a página inicial.
+	
+ O HTML consiste basicamente em 3 partes:
+ 
+📌 Tag <html>
+	- <html> = Início do documento HTML (abre o código).
+	- </html> = Fim do documento HTML (fecha o código).
+	- Tudo o que for da página web fica dentro dessas duas tags.
+
+📝 Tag <head> (Cabeçalho da Página)
+	- Fica dentro da tag <html>.
+	- Serve para colocar informações invisíveis ao usuário, mas importantes para o navegador.
+
+✅ O que vai dentro do <head>?
+	- <title> → Título da aba do navegador.
+	- Links para CSS (estilo).
+	- Scripts JS (se necessário).
+	- Metadados (charset, SEO, responsividade).
+	
+📝 Tag <body> = Corpo da página (conteúdo visível, que aparece para o usuário).
+
+✅ Dicas rápidas:
+	- Toda tag aberta deve ser fechada corretamente (</html>).
+	- O <head> cuida das configurações.
+	- O <body> mostra o que o usuário vê na tela.
+	
+=========== EXEMPLO ===========
+
+<html>
+    <head>
+        <!-- Aqui vai o cabeçalho (título, links, etc.) -->
+    </head>
+
+    <body>
+        <!-- Aqui vai o conteúdo visível do site -->
+    </body>
+</html>
+
+===============================
+
+📌 Tag <title>
+	- Fica dentro da tag <head>.
+	- Define o título que aparece na aba do navegador.	
+	
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body></body>
+</html>
+
+
+----------- Falando sobre Tags -----------
+
+✅ A Tag <i></i> serve para deixar o texto em itálico (letras inclinadas).
+
+🔑 Curiosidade:
+	- <i> originalmente significava “italic” (itálico).
+	- Hoje, o significado semântico pode ser de algo diferente ou destacado (ex: palavras em outro idioma).
+	
+✅ A Tag <strong></strong> serve para destacar o texto deixando-o em negrito e dando um sentido de importância.	
+
+🔑 Diferença entre <strong> e <b>:
+	- <strong> = Negrito com sentido de importância (melhor para acessibilidade e SEO).
+	- <b> = Apenas negrito visual, sem dar sentido especial.
+
+✅ A tag <input type="text"> cria uma caixa de texto para o usuário digitar algo em um formulário.
+
+📌 Por que a tag <input> não tem fechamento?
+	- A tag <input> é uma tag auto-fechada porque ela não tem conteúdo interno.
+	- Ela só cria um campo (ex: caixa de texto, botão, etc.), então não precisa abrir e fechar como outras tags (ex: <p></p>).
+	
+💡 Outras tags auto-fechadas (sem conteúdo interno):
+	- <br> (quebra de linha) = <br>
+	- <hr> (linha horizontal)
+	- <img> (imagem) = <img src="https://vcx.solutions/wp-content/uploads/2021/09/CAPA-Artigo-O-que-e-Tecnologia-da-Informacao-TI.jpg" alt=""/>
+	- <meta>
+	
+=========== EXEMPLO ===========
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <i>Meu primeiro site</i><br />
+
+    <strong>Meu primeiro site</strong><br />
+
+    <strong><i>Meu primeiro site</i></strong
+    ><br />
+
+    <strong>Meu primeiro <i>HTML</i></strong
+    ><br />
+
+    <input type="text" />
+    
+    <img src="" alt="">
+
+  </body>
+</html>	
+
+
+----------- Atributos das Tags -----------
+
+✅ Atributos são informações extras (propriedades) que você adiciona dentro de uma tag HTML para:
+	- Controlar o comportamento da tag
+	- Modificar a aparência
+	- Adicionar funcionalidades
+	
+✅ Exemplos Fáceis:
+
+ 1. Atributo href na Tag <a> (link): <a href="https://www.google.com">Ir para o Google</a>
+	👉 href = para onde o link vai.
+
+ 2. Atributo src na Tag <img> (imagem):	<img src="imagem.jpg" alt="Descrição da imagem">
+	👉 src = caminho da imagem.
+	
+ 3.Atributo type na Tag <input> (campo de texto, senha, etc.): <input type="text" placeholder="Digite seu nome">
+	👉 type = tipo de campo.
+	- A tag <input> muda o comportamento dependendo do type que você escolhe.
+	- Serve para diferentes tipos de dados ou ações.
+	
+	✅ Outros tipos que você pode usar:
+	Tipo (type)		Para que serve
+	text			Campo de texto simples = <input type="text" placeholder="Digite seu nome">
+	number			Campo numérico (com setinhas) = <input type="number" placeholder="Digite sua idade">
+	password		Campo de senha (oculta os caracteres)
+	email			Campo para e-mail (validação automática)
+	date			Campo para escolher data (calendário)
+	color			Campo para escolher uma cor = <input type="color">
+	file			Campo para upload de arquivo
+	checkbox		Caixa de seleção
+	radio			Botão de opção única (seleção única)
+	submit			Botão para enviar o formulário
+	
+💡 Resumindo:
+	- As Tags = criam elementos.
+	- Os atributos = dão detalhes e comandos para esses elementos.	
+
+=========== EXEMPLO ===========
+** style e class, são usados no CSS, usado apenas como exemplo
+
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <strong style="color: blueviolet">Meu primeiro <i>HTML</i></strong
+    ><br />
+	
+	<strong class="TITULO-PRINCIPAL">Meu primeiro <i>HTML</i></strong>
+  </body>
+</html>	
+===============================
+
+🖼️ Tag <img> (Imagem) = <img src="paisagem.jpg" alt="Imagem de uma paisagem" width="300" height="200">
+	- A tag <img> serve para inserir imagens em uma página HTML.
+	- Ela é uma tag auto-fechada (não tem conteúdo dentro).
+
+✅ Principais Atributos da <img>:
+
+Atributo		O que faz?																		Exemplo
+src				Caminho ou link da imagem														src="foto.jpg"
+alt				Texto alternativo (aparece se a imagem não carregar ou para leitores de tela)	alt="Foto de paisagem"
+width			Largura da imagem (em pixels ou %)												width="200"
+height			Altura da imagem (em pixels ou %)												height="150"
+
+💡 Resumo:
+	- <img> = mostra imagem.
+	- src = onde está a imagem.
+	- alt = descrição da imagem.
+	
+** o link dentro da Tag src=" ", foi copiado do Google: Imagens > Botão direito: Copy image address > colado na Tag
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <img
+      width="500"
+      src="data:image/jpeg;base64,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"
+      alt=""
+    />
+  </body>
+</html>
+
+----------- Textos -----------
+
+📝 Tags <h1>, <h2>, <h3>, ... <h6>
+	- São usadas para criar títulos e subtítulos em uma página HTML.
+	- Ajudam a organizar o conteúdo e também são importantes para SEO (otimização para buscas).
+	
+✅ Diferenças entre elas:
+
+Tag		Significado				Tamanho do Texto
+<h1>	Título principal		Maior
+<h2>	Subtítulo				Menor que <h1>
+<h3>	Sub-subtítulo			Menor que <h2>
+<h4>	E assim por diante...	Cada vez menor
+<h5>	...	
+<h6>	Menor título			Menor de todos	
+
+✅ Exemplo prático:
+	<h1>Título Principal</h1>
+	<h2>Subtítulo</h2>
+	<h3>Outro Subtítulo</h3>
+	
+👉 Resultado:
+	- <h1> → Texto maior
+	- <h2> → Um pouco menor
+	- <h3> → Ainda menor
+
+💡 Dica:
+	- Use apenas 1 <h1> por página (é o mais importante).
+	- Os outros são para organizar o restante do conteúdo.
+	
+📝 Tag <p> (Parágrafo)
+	- Serve para criar parágrafos de texto na página.
+	- É usada para escrever frases, descrições, explicações, qualquer tipo de texto corrido.
+	- <p>Este é um parágrafo de texto em HTML.</p>
+
+🔑 Dicas:
+	- Todo texto normal que você quiser exibir deve ficar dentro de <p>...</p>.
+	- O navegador dá espaçamento automático entre parágrafos.
+	
+✅ Você pode também combinar com tags de formatação:
+	<p>Este é um <strong>texto importante</strong> dentro de um parágrafo.</p>	
+	
+	
+✅ A tag <blockquote> é usada para destacar uma citação ou fala de alguém em um texto HTML.
+
+📝 O que faz a <blockquote>?
+	- Exibe o texto recuado (indentado) para mostrar que é uma citação.
+	- Ajuda a separar visualmente algo que foi dito ou escrito por outra pessoa.
+	- O texto vai aparecer com margem recuada, como uma frase de destaque.
+		<blockquote>"A persistência é o caminho do êxito." — Charles Chaplin</blockquote>
+
+💡 Dica Extra: Tag <cite>
+	- Se quiser, pode usar também a tag <cite> para indicar o autor: <cite>Robert Collier</cite>
+	
+✅ Resumo:
+	- <blockquote> = para citações longas (visual destacado).
+	- <q> = para citações curtas (dentro de um parágrafo).	
+	
+📝 Tag <i> (Itálico)
+	- Deixa o texto em itálico (letras inclinadas).
+	- Usada para destacar palavras, termos em outro idioma ou enfatizar algo.	
+
+📝 Tag <u> (Sublinhado)
+	- Deixa o texto sublinhado.
+	- Não é muito usada hoje porque o CSS costuma fazer isso, mas ainda funciona.	
+	
+📝 Tag <mark> (destacar um texto com marcação)
+	- Serve para destacar um texto com marcação, como se fosse um marcador de texto amarelo.
+	- Usada para chamar atenção para uma palavra ou frase importante dentro do texto.
+	
+📝 A Tag <sup> serve para escrever texto em sobrescrito (ou seja, em cima da linha do texto normal).
+	- Exibir expoentes (matemática, química).
+	- Indicar nota de rodapé ou algo em menor destaque acima do texto
+	- Resultado 2² = 4
+	
+📝 A Tag <sub> = Inferior (para escrever abaixo da linha, tipo fórmulas químicas: H<sub>2</sub>O).	
+
+
+--- Referências/Dicionario do HTML
+Site = https://www.w3schools.com/
+
+=========== EXEMPLO ===========
+
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <h1>DIO.me</h1>
+    <h2>Impremente o sei futuro global agora!</h2>
+
+    <p>
+      Domine as <strong>tecnologias<sup>*</sup> </strong> utilizadas pelas
+      empresas <mark>mais inovadoras do mundo</mark> e encare seu novo desafio
+      profissional, evoluindo em comunidade com os melhores experts.
+    </p>
+    <blockquote>
+      <strong
+        ><i
+          >O jeito DIO para você ganhar destaque mais rapido no mercado.</i
+        ></strong
+      >
+    </blockquote>
+
+    <h2>Aprenda <u>tecnologias</u> emergentes</h2>
+    <p>
+      Os nossos cursos e programas de formação são criados em conjunto com
+      espacialistas das empresas mais inovadoras do mundo, aplicando uma
+      metodologia para que você domine as tecnologias utilizadas no mercado e
+      também mergulhe nas novas e mais atuais tecnologias que impactarão o
+      futuro dos negócios digitais.
+    </p>
+    <h2>Pratique com desafios de código</h2>
+    <p>
+      Potencializamos o seu talento e aprimoramos as suas habiliades de
+      pensamentos computacional e resolução de dasafios real através de
+      experiências práticas de codificação em nossa plataforma personalizada e
+      exclusiva
+    </p>
+  </body>
+</html>
+
+
+----------- Listas Ordenadas e Não Ordenadas -----------
+
+✅ As tags <ol>, <ul> e <li> são usadas no HTML, ou seja, elas criam a estrutura da lista na página.
+🔗 No CSS, você não usa essas tags diretamente, mas pode estilizá-las para mudar a aparência das listas.
+
+Existem dois tipos principais:
+
+✅ 1. Lista Ordenada → <ol> (Ordered List)
+	- Mostra os itens numerados (1, 2, 3...).
+	
+	👉 Resultado:
+		1. Primeiro item
+		2. Segundo item
+		3. Terceiro item
+
+✅ 2. Lista Não Ordenada → <ul> (Unordered List)
+	- Mostra os itens com bolinhas (•), sem ordem.		
+	
+	👉 Resultado:
+	• Arroz
+	• Feijão
+	• Carne
+	
+🔑 A Tag <li>:
+	- Significa List Item (item da lista).
+	- É o que realmente aparece dentro da lista.
+	- Toda <li> deve estar dentro de um <ol> ou <ul> (são as "tags mães").	
+	
+
+----------- Links -----------	
+
+🔗 Links no HTML → Tag <a> (âncora)
+	- A Tag <a> (ancora) é usada para criar links (para sites, páginas, e-mails, downloads etc.).
+	- Serve para navegar, baixar, enviar e-mails ou abrir novas abas.
+	- <a href="https://www.google.com">Ir para o Google</a>
+	👉 Resultado: Ir para o Google
+		
+✅ Atributos importantes da <a>:
+
+Atributo			O que faz?								Exemplo
+href				Define para onde o link vai				href="https://www.exemplo.com"
+target="_blank"		Abre o link em nova aba	<a 				href="..." target="_blank">
+title				Mostra um texto quando passa o mouse	<a href="..." title="Clique aqui...."	
+
+✅ Exemplos úteis:
+ 1. Link para outro site: <a href="https://www.google.com">Google</a>
+ 2. Link que abre em nova aba: <a href="https://www.google.com" target="_blank">Google em nova aba</a>
+ 3. Link para baixar arquivo: <a href="arquivo.pdf" download>Baixar PDF</a>
+ 4. Link para e-mail: <a href="mailto:email@exemplo.com">Enviar Email</a>
+ 
+=========== EXEMPLO ===========
+ 
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <h1>Meu primeiro site</h1>
+
+    <ul>
+      <li>
+        <a href="http://dio.me">Dio.me</a>
+      </li>
+    </ul>
+  </body>
+</html>
+
+==============================
+
+🏹 Tag target e seus Atributos (HTML)
+	- O target é um atributo da tag <a> que define onde o link será aberto.
+
+✅ Principais Valores do target:
+Valor		O que faz?
+_self		Abre o link na mesma aba (padrão)
+_blank		Abre o link em uma nova aba/janela
+_parent		Abre no frame pai (quando usa frames)
+_top		Abre no frame superior (ou sai de todos os frames)
+
+
+📝 Atributo title dentro da tag <a>
+	- O title serve para mostrar um texto quando o usuário passa o mouse em cima do link.
+	- Ajuda a dar informação extra ou dica.
+	
+✅ Exemplo completo com href, title e target: <a href="http://dio.me" title="Clique aqui e confira." target="_blank">Visite a DIO</a>
+
+👉 Resultado:
+	- O texto visível será “Visite a DIO”.
+	- Quando o mouse passar por cima → aparece uma caixinha com a mensagem: “Clique aqui e confira.”.
+	- Como tem target="_blank", o site abre em nova aba.
+	
+=========== EXEMPLO ===========	
+<html>
+  <head>
+    <title>Meu primeiro site</title>
+  </head>
+
+  <body>
+    <h1>Meu primeiro site</h1>
+    <ul>
+      <li>
+        <a href="http://dio.me" title="Clique aqui e confira." target="_blank"
+          >Visite a DIO</a
+        >
+      </li>
+    </ul>
+  </body>
+</html>	
+
+================================
+
+✅ É uma boa prática testar seu site sempre abrindo na mesma aba (target="_self" ou sem target nenhum).
+
+Por quê?
+🔄 Mais rápido para testar:
+	- Você não precisa ficar abrindo várias abas o tempo todo.
+
+🔍 Ajuda a ver o comportamento real da navegação:
+	- A maioria dos sites abre os links internos na mesma aba.
+
+✅ Links externos (outros sites) → podem usar target="_blank"
+	- Assim o usuário não sai do seu site, mas isso você coloca só depois dos testes.
+
+💡 Dica de teste:
+	- Durante o desenvolvimento ➔ mesma aba (sem target).
+	- Depois, se quiser ➔ adicione target="_blank" nos links que levam para fora do seu site.
