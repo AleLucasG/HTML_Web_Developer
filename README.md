@@ -1,7 +1,7 @@
-# HTML_Web_Developer
 
 📚 Formação: **HTML Web Developer**  
 Plataforma: [DIO - Digital Innovation One](https://web.dio.me/track/formacao-html-web-developer)
+
 
 ---
 
@@ -16,7 +16,9 @@ Plataforma: [DIO - Digital Innovation One](https://web.dio.me/track/formacao-htm
 - Links e imagens
 - Listas ordenadas e não ordenadas
 - Boas práticas e semântica
-- **Desafio I**
+- Desafio I 
+
+  <img width="1861" height="1024" alt="image" src="https://github.com/user-attachments/assets/9a2647ee-576b-4514-b47c-45f9ba6ec5a0" />
 
 ---
 
