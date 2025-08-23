@@ -28,6 +28,7 @@ Plataforma: [DIO - Digital Innovation One](https://web.dio.me/track/formacao-htm
 - Trabalhando com mídias utilizando HTML (`<img>`, `<audio>`, `<video>`, `<track>`, `<iframe>`)
 - Criando tabelas em HTML (`<table>`, `<tr>`, `<td>`, `<th>`)
 - **Desafio II**
+    - https://github.com/digitalinnovationone/trilha-html-modulo-2/tree/main
 
 ---
 
