@@ -6,18 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template - Utilizar como modelo</title>
     <link rel="stylesheet" href="base.css" />
+
+    <style>
+      body {
+        background-color: #98d9b6;
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper {
+        width: 1200px;
+        display: flex;
+        margin: 0 auto;
+        background-color: #98d9b6;
+      }
+      .main {
+        display: flex;
+        flex-flow: column;
+        width: 85%;
+      }
+      .menu {
+        width: 15%;
+        background-color: #f2bb16;
+        padding: 10px 20px 0px;
+      }
+      .header {
+        background-color: #ff8243;
+        min-height: 150px;
+      }
+      .content {
+        background-color: #98d9b6;
+        min-height: 300px;
+        padding: 20px;
+      }
+      .footer {
+        background-color: #f2f5f7;
+        min-height: 150px;
+      }
+    </style>
   </head>
   <body>
-    <center>
-      <img
-        src="https://w0.peakpx.com/wallpaper/463/467/HD-wallpaper-pets-pet-kittten-caine-cat-pisici-animal-dog-puppy.jpg"
-        alt="Logotipo da empresa"
-        width="500"
-        height="250"
-      />
-    </center>
     <div class="wrapper">
       <div class="menu">
+        <!-- Aqui vai o seu menu -->
         <ul>
           <li>
             <a href="principal.html" title="Página principal"
@@ -46,10 +77,17 @@
 
       <div class="main">
         <div class="header">
-          <!-- Aqui vai o seu header -->
+          <!-- Aqui vai o seu header(cabeçalho) -->
+          <img
+            src="https://vistapointe.net/images/pets-3.jpg"
+            alt="Logotipo da empresa"
+            width="1015"
+            height="255"
+          />
         </div>
 
         <div class="content">
+          <!-- Aqui vai o seu conteúdo -->
           <center>
             <h1>O HOSPITAL</h1>
           </center>
@@ -96,14 +134,13 @@
           </center>
         </div>
 
-        <!-- Espaço extra após a tabela -->
         <br /><br /><br />
 
         <div class="footer">
-          <table border="1" align="center" width="1200" cellspacing="5">
+          <!-- Aqui vai o seu rodapé -->
+          <table border="1" align="center" width="1020" cellspacing="4">
             <tr>
               <th>SOBRE NÓS</th>
-              <th>FORMAS DE PAGAMENTO</th>
               <th>ATENDIMENTO</th>
             </tr>
             <tr>
@@ -115,8 +152,6 @@
                 clientes e pacientes muito mais conforto e qualidade no
                 atendimento.
               </td>
-
-              <td></td>
 
               <td>
                 (11) 1234-5678 <br />
