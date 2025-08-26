@@ -95,13 +95,38 @@
                     </h3>
                   </center>
 
-                  Nome <input type="text" name="name" id="name" /> E-mail
-                  <input type="text" name="email" id="email" /><br />
-                  Telefone <input type="phone" name="phone" id="phone" />
-                  <label for="opcao">Assunto </label>
+                  <label for="name">Nome</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                  />
 
-                  <select name="role" id="role">
-                    <option value="Em branco"></option>
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                  /><br />
+
+                  <label for="phone">Telefone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    inputmode="tel"
+                    placeholder="(11) 91234-4567"
+                    pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}"
+                    autocomplete="tel-national"
+                  />
+
+                  <label for="subject-options">Assunto </label>
+                  <select name="subject-options" id="subject-options">
+                    <option value="">---- Selecione ----</option>
                     <option value="Informação">Informação</option>
                     <option value="Sugestão">Sugestão</option>
                     <option value="Elogio">Elogio</option>
@@ -115,28 +140,35 @@
                     cols="80"
                   ></textarea
                   ><br />
-                  <button>Enviar</button>
+                  <button type="submit">Enviar</button>
+                  <button type="reset">Limpar</button>
                 </form>
               </td>
 
               <td>
-                <form action="dados de contato">
+                <section>
                   <h3>TELEFONE DE CONTATO</h3>
-                  (11) 1234-5678 <br />
-                  (11) 9876-5432 <br />
-                  (11) 0123-9876 <br />
-
+                  <p>
+                    (11) 1234-5678 <br />
+                    (11) 9876-5432 <br />
+                    (11) 0123-9876
+                  </p>
                   <h3>WHATSAPP</h3>
-                  (11) 9234-5678 <br />
-
+                  <p>(11) 9234-5678</p>
                   <h3>E-MAIL</h3>
-                  atendimento@hopitalfelicidade.com.br <br />
-
+                  <p>
+                    <a href="atendimento@hopitalfelicidade.com.br"
+                      >atendimento@hopitalfelicidade.com.br</a
+                    >
+                  </p>
                   <h3>NOSSO ENDEREÇO</h3>
-                  Av. Felicidades sem Fim, 123 - Jd. da Paz - Saudade/SP
-                </form>
+                  <address>
+                    Av. Felicidades sem Fim, 123 - Jd. da Paz - Saudade/SP
+                  </address>
+                </section>
               </td>
             </tr>
+
             <table border="1" align="center" width="1010" cellspacing="1">
               <tr>
                 <td>
@@ -160,24 +192,33 @@
           <table border="1" align="center" width="1020" cellspacing="4">
             <tr>
               <th>SOBRE NÓS</th>
-              <th>ATENDIMENTO</th>
+              <th>CONTATO</th>
             </tr>
             <tr>
               <td align="center">
-                O Hospital Amigos da Saúde, destaca-se por ser um dos primeiros
-                hospitais especializado 24 horas na cidade de Felicidade, além
-                de sua excelência no atendimento clínico veterinário. Um espaço
-                amplo, com instalações modernas, proporcionando ao nossos
-                clientes e pacientes muito mais conforto e qualidade no
-                atendimento.
+                <p>
+                  O Hospital Amigos da Saúde, destaca-se por ser um dos
+                  primeiros hospitais especializado 24 horas na cidade de
+                  Felicidade, além de sua excelência no atendimento clínico
+                  veterinário. Um espaço amplo, com instalações modernas,
+                  proporcionando ao nossos clientes e pacientes muito mais
+                  conforto e qualidade no atendimento.
+                </p>
               </td>
-
               <td>
-                (11) 1234-5678 <br />
-                (11) 9876-5432 <br />
-                (11) 0123-9876 <br />
-                atendimento@hopitalfelicidade.com.br <br />
-                Av. Felicidades sem Fim, 123 - Jd. da Paz - Saudade/SP
+                <p>
+                  (11) 1234-5678 <br />
+                  (11) 9876-5432 <br />
+                  (11) 0123-9876
+                </p>
+                <p>
+                  <a href="atendimento@hopitalfelicidade.com.br"
+                    >atendimento@hopitalfelicidade.com.br</a
+                  >
+                </p>
+                <address>
+                  Av. Felicidades sem Fim, 123 - Jd. da Paz - Saudade/SP
+                </address>
               </td>
             </tr>
           </table>
