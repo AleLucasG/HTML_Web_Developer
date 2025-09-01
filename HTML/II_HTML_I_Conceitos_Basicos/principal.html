@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template - Utilizar como modelo</title>
+    <link rel="stylesheet" href="base.css" />
+
+    <style>
+      body {
+        background-color: #98d9b6;
+        display: flex;
+        justify-content: center;
+      }
+
+      .wrapper {
+        width: 1200px;
+        display: flex;
+        margin: 0 auto;
+        background-color: #98d9b6;
+      }
+      .main {
+        display: flex;
+        flex-flow: column;
+        width: 85%;
+      }
+      .menu {
+        width: 15%;
+        background-color: #f2bb16;
+        padding: 10px 20px 0px;
+      }
+      .header {
+        background-color: #ff8243;
+        min-height: 150px;
+      }
+      .content {
+        background-color: #98d9b6;
+        min-height: 300px;
+        padding: 20px;
+      }
+      .footer {
+        background-color: #f2f5f7;
+        min-height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu">
+        <!-- Aqui vai o seu menu -->
+        <ul>
+          <li>
+            <a href="principal.html" target="_self" title="Página principal"
+              >Página Principal</a
+            >
+          </li>
+          <li>
+            <a href="sobre.html" title="Informações sobre a clínica"
+              >Sobre a clínica</a
+            >
+          </li>
+          <li>
+            <a href="horario.html" title="Veja nossos horários de atendimento"
+              >Horário de Atendimento</a
+            >
+          </li>
+          <li>
+            <a
+              href="contato.html"
+              title="Numero de telefone da clínica, endereço, email, etc"
+              >Contato</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <div class="header">
+          <!-- Aqui vai o seu header (cabeçalho)-->
+          <img
+            src="https://vistapointe.net/images/pets-5.jpg"
+            alt="Diversos animais de estimação, incluindo gatos, cachorros, furrão, coelho, passaros, um aquario redondo com peixes, coelho, porquinho da india e 
+            camundongo em um fundo branco, todos olhando para frente. Alguns sentados e outros de pé"
+            width="1015"
+            height="255"
+          />
+        </div>
+
+        <div class="content">
+          <!-- Aqui vai o seu conteúdo -->
+          <center>
+            <h1>Bem-vindo ao Hospital Amigos da Saúde</h1>
+          </center>
+          <center>
+            <h4>
+              Somos um hospital veterinário 24 horas dedicado ao cuidado e
+              bem-estar dos seus animais de estimação. <br />
+              Aqui você encontra atendimento especializado, exames, cirurgias e
+              um Pet Shop completo, sempre com carinho e dedicação.
+            </h4>
+
+            <img
+              src="https://cdn.pensador.com/img/imagens/pe/ns/pensador_frases_de_medicina_veterinaria_01_cuidar_dos_animais_c.jpg?auto_optimize=low&width=655"
+              alt="Uma imagen em forma de desenho, com fundo na cor laranja, tendo um homem de oculos, cabelo e barba na cor marrom e com um estetoscopio em volta do pescoço.
+              A um passaro azul sobre sua cabeça, um cachorro da cor marrom do lado esquerdo, e um gato dourado do lado direito. 
+              Cada um com uma tijela de comida (ração) a sua frente."
+            />
+            <p>
+              Explore nosso site para conhecer mais sobre
+              <a href="sobre.html">quem somos</a>, nossos
+              <a href="horario.html">horários de atendimento</a> e como
+              <a href="contato.html">entrar em contato</a> conosco.
+            </p>
+          </center>
+        </div>
+
+        <br /><br />
+
+        <div class="footer">
+          <!-- Aqui vai o seu rodapé -->
+          <table border="1" align="center" width="1020" cellspacing="4">
+            <tr>
+              <th>SOBRE NÓS</th>
+              <th>CONTATO</th>
+            </tr>
+            <tr>
+              <td align="center">
+                <p>
+                  O Hospital Amigos da Saúde, destaca-se por ser um dos
+                  primeiros hospitais especializado 24 horas na cidade de
+                  Felicidade, além de sua excelência no atendimento clínico
+                  veterinário. Um espaço amplo, com instalações modernas,
+                  proporcionando ao nossos clientes e pacientes muito mais
+                  conforto e qualidade no atendimento.
+                </p>
+              </td>
+              <td>
+                <p>
+                  (11) 1234-5678 <br />
+                  (11) 9876-5432 <br />
+                  (11) 0123-9876
+                </p>
+                <p>
+                  <a href="atendimento@hopitalfelicidade.com.br"
+                    >atendimento@hopitalfelicidade.com.br</a
+                  >
+                </p>
+                <address>
+                  Av. Felicidades sem Fim, 123 - Jd. da Paz - Saudade/SP
+                </address>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
