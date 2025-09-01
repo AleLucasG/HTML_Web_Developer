@@ -11,13 +11,142 @@ Apresentação
  - Aside, Section e Nav
  - Article, Blockquote e Q
  - Figure, Figcaption e Picture
- - Resenha - O que é SEO
+ - Resenha - O que é SEO?
+ 
+ Objetivo: Virar expert em semnântica no HTML. 
+ Saber mais sibre a importância das acessibilidade no HTNL.
+ Conhecer as novas tags estruturais e criar um site do jeito que tem que ser.
  
  
 ------------- HTML - Semântica ------------- 
+ Semântica no HTML significa o significado do conteúdo, ou seja, usar tags que descrevem o que aquele conteúdo representa, e não apenas como ele deve aparecer visualmente.
+ 
+ Por que semântica é importante:
+	1. Acessibilidade
+	Leitores de tela (para pessoas com deficiência visual) entendem melhor o conteúdo.
+
+	2. SEO (buscadores)
+	O Google e outros motores de busca conseguem interpretar melhor a estrutura da página.
+
+	3. Manutenção do código
+	Fica mais fácil para você ou outros desenvolvedores entenderem o que cada parte faz.
 
 
+Exemplos de tags semânticas no HTML5
+Tag	Uso
+<header>	Cabeçalho da página ou seção
+<nav>		Menu de navegação
+<main>		Conteúdo principal
+<section>	Seção do conteúdo
+<article>	Artigos, posts, notícias
+<aside>		Conteúdo lateral, notas ou links
+<footer>	Rodapé da página ou seção
+
+💡 Resumindo: semântica é sobre usar a tag certa para o conteúdo certo, não apenas criar <div>s e <span>s só para formatar.
+
+
+💡 Leitores de tela não “preferem” inglês, mas eles funcionam melhor quando:
+	1.O idioma da página está declarado corretamente no HTML:
+		Exemplo:
+		<html lang="pt-BR"> ou <html lang="en">
+		- Isso ajuda o leitor a usar a voz e pronúncia corretas para o idioma.
+
+	2. O conteúdo está bem estruturado e semântico
+		- Usar <header>, <nav>, <main>, <section>, <article>, <footer>, <h1> a <h6>, <p>, <ul> etc.
+		- Isso permite que o leitor “entenda” o que é título, parágrafo, lista, link etc.
+
+	3. O alt das imagens e labels dos formulários estão descritivos e claros
+		Exemplo:
+		<img src="pets.jpg" alt="Cachorros e gatos em hospital veterinário" />
+		
+💡 Resumo:
+	- Leitores de tela não têm problema com português, mas precisam que você declare o idioma e use HTML semântico e descritivo.
+	- Se você deixar lang="en" e escrever em português, a voz pode ler estranho ou com sotaque incorreto	
+
+
+🔹 Antigamente
+
+Tudo era <div> e <span>
+
+Exemplo:
+	<div class="header"></div>
+	<div class="menu"></div>
+	<div class="content"></div>
+	<div class="footer"></div>
+
+Problema:
+	- Semântica ruim → não dizia o que cada bloco representava.
+	- Leitores de tela e motores de busca tinha que adivinhar o que cada <div> significava.
+
+🔹 Com HTML5 (padrão atual)
+
+HTML5 trouxe tags semânticas, que descrevem melhor o conteúdo:
+
+Tag	Uso
+<header>	Cabeçalho da página ou seção
+<nav>		Área de navegação (menus, links principais)
+<section>	Seção do conteúdo, com tema próprio
+<aside>		Conteúdo lateral, notas ou links relacionados
+<article>	Conteúdo independente, como posts ou notícias
+<footer>	Rodapé da página ou seção
+
+🔹 Exemplo de estrutura moderna
+<body>
+  <header>
+    <h1>Hospital Amigos da Saúde</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre nosso hospital</h2>
+      <p>Texto descritivo...</p>
+    </section>
+
+    <aside>
+      <h3>Dicas rápidas</h3>
+      <p>Conteúdo lateral, links ou promoções.</p>
+    </aside>
+
+    <article>
+      <h2>Notícia ou post</h2>
+      <p>Conteúdo independente.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Hospital Amigos da Saúde</p>
+  </footer>
+</body>
+
+
+💡 Resumo:
+	- Antes: <div> era usado para tudo → sem significado.
+	- Agora: <header>, <nav>, <section>, <aside>, <article>, <footer> → dão significado real ao conteúdo, melhoram acessibilidade, SEO e organização do código.
+		
 ------------- Mudanças do HTML 5 -------------
+
+🔹 Histórico
+ - HTML 4.01 → lançado em 1999
+	- Base para sites por muitos anos.
+	- Estrutura fortemente baseada em <div> e <span> para layout.
+	- Muitos elementos de apresentação (<font>, <center>, <b>, <i>) eram usados para estilizar conteúdo.
+
+ - HTML5 → publicado oficialmente em 2014 (a recomendação do W3C, mas começou a ser desenvolvido em 2008)
+	- Foco em semântica, multimídia e interatividade.
+	- Suporte nativo para áudio, vídeo, gráficos (Canvas, SVG).
+	- API para geolocalização, armazenamento local, offline e formulários avançados.
+	
+🔹 Resumo rápido
+	- HTML4 → 1999, foco em estrutura e apresentação via <div> e CSS limitado.
+	- HTML5 → 2014, foco em semântica, multimídia, acessibilidade e APIs modernas.
+	- Mudança de paradigma: de layout via divs e tabelas para conteúdo semântico e interativo.	
 
 
 ------------- Acessibilidade -------------
