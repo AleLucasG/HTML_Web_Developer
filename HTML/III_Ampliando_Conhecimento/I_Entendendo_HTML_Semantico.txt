@@ -1,0 +1,42 @@
+------------- I_Entendendo_HTML_Semantico -------------
+
+Apresentação
+ 
+ Percurso:
+ - HTML - Semântica
+ - Mudanças do HTML 5
+ - Acessibilidade
+ - Web Scraping
+ - Main, Header e Footer
+ - Aside, Section e Nav
+ - Article, Blockquote e Q
+ - Figure, Figcaption e Picture
+ - Resenha - O que é SEO
+ 
+ 
+------------- HTML - Semântica ------------- 
+
+
+------------- Mudanças do HTML 5 -------------
+
+
+------------- Acessibilidade -------------
+
+
+------------- Web Scraping -------------
+
+
+------------- Main, Header e Footer: <main>, <header>, <footer> -------------
+
+
+------------- Aside, Section e Nav: <nav>, <section>, aside> -------------
+
+
+------------- Article, Blockquote e Q: <article>, <blockquote>, <picture> -------------
+
+
+------------- Figure, Figcaption e Picture: <figure>, <figcaption>, <picture> -------------
+
+
+------------- Resenha - O que é SEO? -------------
+
