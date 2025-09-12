@@ -150,16 +150,310 @@ Tag	Uso
 
 
 ------------- Acessibilidade -------------
+** A internet é para todos
 
+🌐 Acessibilidade na Web (HTML)
+✨ Por que acessibilidade é essencial?
+	- Garante que todas as pessoas, incluindo quem tem deficiência visual, auditiva, motora ou cognitiva, consigam usar sites e ferramentas da Web.
+	- É uma boa prática de desenvolvimento: melhora a usabilidade, a experiência do usuário e até o ranqueamento em mecanismos de busca.
+	- Ajuda organizações e desenvolvedores a não excluir usuários de seus produtos e serviços.
+
+ A acessibiliade é essencial para desenvolvedores e organizaçõe que desejam criar sites 
+e ferramentas da Web de alta qualidade e não exluir as pesooas de usar seus produtos e serviços.
+
+📘 Guias oficiais
+
+ Iniciativa de Acessibilidade da Web (WAI):
+👉 https://www.w3.org/WAI/
+
+ Diretrizes de Acessibilidade para Conteúdo da Web (WCAG 3.0):
+👉 https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/
+
+ Esses guias apresentam regras e recomendações para construir páginas acessíveis.
+
+
+ 🌳 Árvore de Acessibilidade (Accessibility Tree)
+	- É uma representação interna que o navegador cria a partir do DOM (Document Object Model (HTML lido))+ informações de acessibilidade.
+	- Serve de base para tecnologias assistivas, como leitores de tela.
+	- Mostra como os elementos da página são percebidos por essas ferramentas.
+
+
+🔎 Exemplo simples:
+	<button>Enviar</button>
+
+ Na árvore de acessibilidade, isso pode ser lido como:
+	- Função: botão
+	- Nome: "Enviar"
+ Ou seja, não é só o HTML, mas como o elemento é interpretado para usuários com necessidades especiais.
+ 
+ 
+ 
+🧩 WAI-ARIA (Accessible Rich Internet Applications)
+📖 O que é?
+	- WAI-ARIA = Accessible Rich Internet Applications.
+	- É um conjunto de atributos especiais que você adiciona no HTML para ajudar tecnologias assistivas (ex.: leitores de tela) a entenderem melhor os elementos interativos.
+	- Foi criado porque nem sempre o HTML padrão descreve corretamente componentes mais complexos (como menus dinâmicos, modais, sliders, abas, etc.). 
+	
+📚 Estrutura: "Aria > JavaScript > CSS > HTML"
+ Isso significa:
+	- HTML → base semântica (tags corretas).
+	- CSS → aparência visual.
+	- JavaScript → comportamento dinâmico.
+	- ARIA → complementa a acessibilidade quando os 3 de cima não são suficientes.
+
+⚠️ Regra de ouro:
+ Use ARIA só quando o HTML semântico não resolve.
+ Exemplo: use <button> em vez de <div role="button">.	
+ 
+🛠️ Tipos principais de atributos ARIA
+	- Roles (funções) → indicam o papel do elemento.
+		<div role="button">Enviar</div>
+	(Mas sempre prefira <button> quando possível!)
+
+	- States (estados) → mostram o estado atual do componente.
+		<button aria-pressed="true">Negrito</button>
+	
+	- Properties (propriedades) → descrevem características adicionais.
+		<div role="alert" aria-live="assertive">
+			Atenção: erro no formulário.
+		</div>
+
+🌳 ARIA e a Árvore de Acessibilidade
+	- O navegador pega:
+	HTML + CSS + JavaScript + ARIA
+	👉 gera a Accessibility Tree.
+
+	- Essa árvore é o que os leitores de tela realmente interpretam.
+	- Ou seja, ARIA influencia diretamente como o usuário final "ouve" ou "sente" a página. 
+ 
+
+✅ Boas práticas de acessibilidade em HTML
+	1. Usar tags semânticas (<header>, <nav>, <main>, <footer>).
+	2. Fornecer texto alternativo em imagens (alt).
+	3. Garantir contraste suficiente entre texto e fundo.
+	4. Usar labels associados a formulários.
+	5. Tornar a navegação possível por teclado (tab, enter, espaço).
+	6. Testar com leitores de tela (NVDA, VoiceOver).
+	
+✅ Boas práticas com WAI-ARIA
+	1. Prefira sempre HTML semântico primeiro.
+	2. Use ARIA apenas para complementar (não substituir HTML).
+	3. Mantenha estados atualizados via JavaScript (aria-expanded, aria-hidden, etc.).
+	4. Teste com leitores de tela (NVDA, JAWS, VoiceOver).	
 
 ------------- Web Scraping -------------
 
+⚠️ "Rastreadores"(Crawler - às vezes também chamado de "robô" ou "indexador" é um termo génerico para qualquer programa usado para 
+descobrir e examinar sites automaticamente seguindo links entre páginas da Web.
+
+📌 O que é o Googlebot?
+	- É o robô de rastreamento (crawler) do Google.
+	- Ele navega pela internet lendo o HTML das páginas para entender o conteúdo dos sites.
+	- Essa coleta serve para indexar o site no Google, ou seja, colocar as páginas no buscador.
+
+🔹 Diferença entre Googlebot e Web Scraping comum:
+	- O Googlebot não coleta dados para uso próprio (como preços, textos, etc.), mas sim para organizar informações e mostrar nos resultados de busca.
+	- Já o Web Scraping é feito por pessoas ou empresas para extrair dados específicos de sites (ex.: preços de concorrentes, notícias, estatísticas).
+
+📊 Resumo:
+	- Googlebot = um tipo de scraper oficial do Google → lê HTML para indexar sites.
+	- Web Scraping genérico = usado por qualquer pessoa para coletar informações do HTML de páginas web.
+
+✅ Web Scraping é uma técnica usada para extrair informações de sites automaticamente, navegando e coletando dados de páginas da web.
+
+👉 Em relação ao HTML:
+	- Toda página web é construída em HTML (a "estrutura" do site).
+	- O Web Scraping acessa o código HTML e lê os elementos (como <div>, <table>, <span>, <a>) para pegar textos, links, imagens, preços, notícias, etc.
+	- Exemplo: você pode usar um scraper para coletar todos os títulos de notícias de um site de jornal que estão dentro das tags <h2>.
+
+🔹 Como funciona geralmente:
+	1. O programa faz uma requisição HTTP para o site (como se fosse um navegador).
+	2. Recebe o HTML da página.
+	3. Analisa esse HTML (parse) e extrai os elementos desejados.
+	4. Organiza os dados em tabelas, planilhas ou banco de dados.
+
+⚙️ Ferramentas comuns:
+	- Python: BeautifulSoup, Scrapy, Selenium (quando precisa simular um navegador).
+	- JavaScript: Puppeteer, Cheerio.
+
+⚠️ Importante:
+	- Nem todo site permite scraping (alguns bloqueiam ou têm termos de uso que proíbem).
+	- É diferente de API, que já fornece os dados de forma estruturada.
+
+
+✅ Quanto melhor o seu site for indexado pelo Googlebot, mais fácil o Google vai entender o conteúdo dele → e melhor ele pode aparecer nos resultados de busca.
+
+ Isso depende de alguns pontos:
+
+🔹 Boa indexação (SEO técnico)
+	- O site precisa ter HTML limpo e bem estruturado.
+	- Usar corretamente tags de título (<h1>, <h2>, etc.).
+	- Ter URLs amigáveis (ex.: /produtos/camisa em vez de /?id=123).
+	- Usar meta tags (<title>, <meta description>).
+	- Gerar sitemap.xml e robots.txt para guiar o Googlebot.
+
+🔹 Conteúdo relevante (SEO de conteúdo)
+	- Textos claros, originais e bem organizados.
+	- Uso correto de palavras-chave (sem exagerar).
+	- Imagens com atributo alt descritivo.
+
+🔹 Performance e usabilidade
+	- Site rápido (Google valoriza velocidade).
+	- Responsivo (funciona bem no celular).
+	- Boa experiência do usuário (tempo de permanência, baixa taxa de rejeição).
+
+📊 Resumo prático:
+Se o Googlebot consegue ler e entender bem o HTML do seu site, ele indexa melhor.
+E se a indexação está boa + o conteúdo é relevante → seu site aparece mais nas buscas.
+
+
+📌 SEO significa Search Engine Optimization (em português: Otimização para Motores de Busca).
+
+👉 É um conjunto de técnicas para fazer com que um site ou página apareça mais bem posicionado nos resultados do Google (ou outros buscadores).
+
+🔹 Como funciona o SEO?
+	Quando alguém pesquisa no Google, o buscador decide quais sites mostrar primeiro.
+	O SEO ajuda o seu site a:
+		1. Ser encontrado pelo Googlebot (indexação).
+		2. Ser considerado relevante e confiável para aparecer entre os primeiros resultados.
+
+🔹 Tipos principais de SEO:
+	1. SEO On-Page (dentro do site)
+		- Estrutura do HTML (tags <title>, <h1>, <meta description>).
+		- Uso de palavras-chave certas no texto.
+		- URLs amigáveis.
+		- Imagens com descrição (alt).
+	2. SEO Off-Page (fora do site)
+		- Links de outros sites apontando para o seu (backlinks).
+		- Autoridade e reputação do site.
+	3. SEO Técnico
+		- Velocidade do site.
+		- Responsividade (celular e desktop).
+		- Sitemap.xml e robots.txt bem configurados.
+		- Segurança (HTTPS).
+
+🔹 Exemplo simples:
+	- Se você tem um site de receitas:
+		- Usar título: “Bolo de cenoura fofinho – Receita simples e rápida”
+		- URL: www.meusite.com/bolo-de-cenoura-fofinho
+		- Texto claro, com imagens otimizadas e explicação bem feita.
+
+Isso ajuda o Google a entender do que se trata e mostrar sua página quando alguém digitar “bolo de cenoura fofinho” na busca.
+
+👉 Resumindo: SEO é deixar seu site “amigável” para o Google e útil para os usuários, aumentando as chances de aparecer nas primeiras posições da busca.
 
 ------------- Main, Header e Footer: <main>, <header>, <footer> -------------
+
+🔹 <main>
+	- Pela especificação do HTML5, só pode haver um <main> por página.
+	- Ele deve conter o conteúdo principal único da página.
+	- Não pode estar dentro de <header>, <footer>, <article>, <aside> ou <nav>.
+
+🔹 <header> e <footer>
+	- Diferente do <main>, você pode ter vários <header> e <footer> em uma mesma página.
+	- Exemplo:
+		Um <header> no topo da página (global).
+	- Outro <header> dentro de um <article> ou <section>, para aquele conteúdo específico.
+	- O mesmo vale para <footer>: pode ter o rodapé geral e rodapés locais dentro de artigos/seções.
 
 
 ------------- Aside, Section e Nav: <nav>, <section>, aside> -------------
 
+ Três tags semânticas do HTML5:
+
+🔹 <nav>
+	- Define uma área de navegação.
+	- Normalmente contém links principais para outras partes do site ou página.
+	- Deve ser usada só quando os links realmente representam navegação (menu, índice, etc.).
+	
+✅ Exemplo:
+
+<nav>
+  <ul>
+    <li><a href="/home">Início</a></li>
+    <li><a href="/receitas">Receitas</a></li>
+    <li><a href="/contato">Contato</a></li>
+  </ul>
+</nav>
+
+
+🔹 <section>
+	- Representa uma seção temática do conteúdo.
+	- Normalmente tem um título (<h2>, <h3>).
+	- Agrupa conteúdos que fazem sentido juntos, mas não são artigos independentes.
+
+✅ Exemplo:
+
+<section>
+  <h2>Receitas de Bolo</h2>
+  <p>Aqui estão algumas receitas deliciosas...</p>
+</section>
+
+
+🔹 <aside>
+	- Representa conteúdo complementar ou secundário.
+	- Pode estar na lateral ou no meio da página, mas não faz parte do fluxo principal.
+	- Usado para:
+		- Barras laterais
+		- Publicidade
+		- Links relacionados
+		- Biografia do autor
+
+✅ Exemplo:
+
+<aside>
+  <h3>Dica</h3>
+  <p>Você pode adicionar raspas de laranja ao bolo para dar mais sabor.</p>
+</aside>
+
+📊 Resumão rápido:
+	- <nav> → menu de navegação (links principais).
+	- <section> → divisão de conteúdo principal por temas.
+	- <aside> → conteúdo extra, mas relacionado (sidebar, dicas, anúncios).
+	
+Exemplo
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tags HTML 5: Estrutural</title>
+    <style>
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+      }
+      nav ul li a {
+        padding: 10px 15px;
+        color: blue;
+        text-decoration: none;
+        border-radius: 15px 10px;
+      }
+      nav ul li a:hover {
+        color: white;
+        background: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="tel:+55119919395945">Telefone</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
+  </body>
+</html>	
+	
 
 ------------- Article, Blockquote e Q: <article>, <blockquote>, <picture> -------------
 
