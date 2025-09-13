@@ -170,7 +170,9 @@ e ferramentas da Web de alta qualidade e não exluir as pesooas de usar seus pro
 👉 https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/
 
  Esses guias apresentam regras e recomendações para construir páginas acessíveis.
-
+ 
+ Qual o consórcio que regulamenta as regras definidas no HTML 5?
+	R: W3C
 
  🌳 Árvore de Acessibilidade (Accessibility Tree)
 	- É uma representação interna que o navegador cria a partir do DOM (Document Object Model (HTML lido))+ informações de acessibilidade.
@@ -553,6 +555,84 @@ Exemplo:
 
 ------------- Figure, Figcaption e Picture: <figure>, <figcaption>, <picture> -------------
 
+🔹 <figure>
+	- Representa conteúdo de mídia independente (imagem, gráfico, diagrama, vídeo) que é referenciado no texto.
+	- Normalmente usado junto com <figcaption> para dar legenda ou descrição.
+
+✅ Exemplo:
+
+<figure>
+  <img src="bolo.jpg" alt="Bolo de cenoura">
+  <figcaption>Bolo de cenoura com cobertura de chocolate</figcaption>
+</figure>
+
+
+🔹 <figcaption>
+	- É a legenda do <figure>.
+	- Pode ser colocado antes ou depois do conteúdo dentro do <figure>.
+
+✅ Exemplo (antes da imagem):
+
+<figure>
+  <figcaption>Este é o melhor bolo de cenoura</figcaption>
+  <img src="bolo.jpg" alt="Bolo de cenoura">
+</figure>
+
+
+🔹 <picture>
+	- Permite exibir imagens responsivas, oferecendo versões diferentes de acordo com tamanho da tela ou tipo de dispositivo.
+	- Funciona dentro do <figure> ou sozinho.
+
+✅ Exemplo dentro de <figure>:
+
+<figure>
+  <picture>
+    <source srcset="bolo-grande.jpg" media="(min-width: 800px)">
+    <source srcset="bolo-medio.jpg" media="(min-width: 500px)">
+    <img src="bolo-pequeno.jpg" alt="Bolo de cenoura com cobertura de chocolate">
+  </picture>
+  <figcaption>Bolo de cenoura responsivo para diferentes telas</figcaption>
+</figure>
+
+
+📊 Resumo rápido:
+	- <figure> → container de mídia independente.
+	- <figcaption> → legenda ou descrição do <figure>.
+	- <picture> → versões alternativas de imagem para responsividade.
 
 ------------- Resenha - O que é SEO? -------------
 
+🔹 O que é SEO
+
+SEO significa Search Engine Optimization (Otimização para Motores de Busca).
+É um conjunto de técnicas usadas para melhorar a posição de um site nos resultados de pesquisa do Google, Bing, etc.
+
+🔹 Objetivos do SEO
+	1. Ser encontrado pelos buscadores → facilitar a indexação pelo Googlebot.
+	2. Ser relevante para os usuários → conteúdo de qualidade, bem organizado e fácil de ler.
+	3. Melhorar a experiência do usuário → site rápido, responsivo e seguro.
+
+🔹 Tipos de SEO
+	1. SEO On-Page (dentro do site)
+		- Tags HTML corretas: <title>, <h1>, <meta description>.
+		- URLs amigáveis.
+		- Conteúdo com palavras-chave relevantes.
+		- Imagens com alt descritivo.
+
+	2. SEO Off-Page (fora do site)
+		- Backlinks de sites confiáveis apontando para o seu.
+		- Autoridade e reputação online.
+
+	3. SEO Técnico
+		- Velocidade do site.
+		- Responsividade (mobile friendly).
+		- Sitemap.xml e robots.txt.
+		- HTTPS e segurança.
+
+🔹 Exemplo prático
+ Se você tem um site de receitas:
+	- <title>: “Bolo de Cenoura Fofinho – Receita Fácil”
+	- URL: www.meusite.com/bolo-de-cenoura-fofinho
+	- Texto bem estruturado, com imagens otimizadas e <h2> para cada passo.
+
+Isso ajuda o Google a entender sobre o que é sua página e a mostrar nos resultados de busca.
