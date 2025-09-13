@@ -455,8 +455,101 @@ Exemplo
 </html>	
 	
 
-------------- Article, Blockquote e Q: <article>, <blockquote>, <picture> -------------
+------------- Article, Blockquote e Q: <article>, <blockquote>, <q> -------------
 
+🔹 <article>
+	- Define um conteúdo independente e completo, que faz sentido sozinho.
+	- Pode ser um post de blog, uma notícia, um comentário de fórum, etc.
+	- Geralmente tem título próprio e pode ter header/footer internos.
+
+✅ Exemplo:
+
+<article>
+  <header>
+    <h2>Bolo de Cenoura Fofinho</h2>
+    <p>Postado em 12/09/2025 por Alessandra</p>
+  </header>
+
+  <p>Receita completa com cobertura de chocolate...</p>
+
+  <footer>
+    <p>Categoria: Bolos</p>
+  </footer>
+</article>
+
+
+🔹 <blockquote>
+	- Usado para citações longas (de outra pessoa ou fonte).
+	- O navegador geralmente dá um recuo automático ao texto.
+	- Pode usar o atributo cite para indicar a fonte da citação.
+
+✅ Exemplo:
+
+<blockquote cite="https://www.livrodereceitas.com/bolo-cenoura">
+  "O bolo de cenoura é uma das receitas mais tradicionais da confeitaria brasileira."
+</blockquote>
+
+
+🔹 <q>
+	- Usada para citações curtas dentro de um texto.
+	- Ao contrário do <blockquote>, que é para citações longas, <q> é inline, ou seja, fica dentro de um parágrafo.
+	- O navegador normalmente coloca aspas automaticamente ao redor do conteúdo.
+
+✅ Exemplo:
+	<p>O chef disse que <q>esse bolo de cenoura é o melhor que já fiz</q> durante a entrevista.</p>
+
+
+➡ O navegador vai exibir algo como:
+	O chef disse que “esse bolo de cenoura é o melhor que já fiz” durante a entrevista.
+
+📊 Resumo prático:
+	- <article> → conteúdo independente (post, notícia, artigo).
+	- <blockquote> → → citação longa, bloco separado, geralmente com recuo.
+	- <q> → citação curta, inline, aspas automáticas.
+	
+---------------
+
+Exemplo:	
+	
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tags HTML 5: Estrutural</title>
+  </head>
+
+  <body>
+    <header></header>
+
+    <main>
+      <article>
+        <header>
+          <h1>Cientistas descobrem no Brasil mamífero mais antigo da Terra</h1>
+          <p>
+            <time datetime="2022-09-12T18:53">12/09/22 às 18:53</time> -
+            <cite>Ingrid Oliveira e Carolina Figueiredo, da CNN</cite>
+          </p>
+        </header>
+
+        <blockquote
+          cite="https://www.cnnbrasil.com.br/nacional/cientistas-descobrem-no-brasil-mamifero-mais-antigo-da-terra/"
+        >
+          "Uma equipe de paleontólogos brasileiros e ingleses descobriu os
+          mamíferos mais antigos do mundo."
+        </blockquote>
+
+        <p>
+          O trabalho de cerca de 20 anos revelou que fósseis encontrados na
+          região central do Rio Grande do Sul pertencem a uma espécie de roedor.
+        </p>
+      </article>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
+	
 
 ------------- Figure, Figcaption e Picture: <figure>, <figcaption>, <picture> -------------
 
