@@ -7,17 +7,31 @@
   </head>
 
   <body>
-    <progress id="progress" max="100" min="0" value="0"></progress>
+    <input type="text" id="busca" /><br />
+    <p id="descricao">
+      A primeira regra de qualquer tecnologia utilizada nos negócios é que a
+      automação aplicada a uma operação eficiente aumentará a eficiência. A
+      segunda é que a automação aplicada a uma operação ineficiente aumentará a
+      ineficiência
+    </p>
 
     <script>
-      var progress = document.getElementById("progress");
-      const interval = setInterval(() => {
-        progress.value += 10;
-        if (progress.value >= 100) {
-          alert("Carregamento realizado com sucesso!");
-          clearInterval(interval);
-        }
-      }, 1000);
+      var searchField = document.getElementById("busca");
+      var desacriptionObject = document.getElementById("descricao");
+      var textToSearch = desacriptionObject.innerHTML;
+
+      function realizaBusca(busca) {
+        const regex = new RegExp(`(${busca})(?!(.(?!<mark>))*</mark>)+`, "ig");
+        const ocurrences = textToSearch.match(regex);
+        desacriptionObject.innerHTML = textToSearch.replace(
+          regex,
+          `<mark>${busca}</mark>`
+        );
+      }
+
+      searchField.addEventListener("keyup", (e) =>
+        realizaBusca(e.target.value)
+      );
     </script>
   </body>
 </html>
