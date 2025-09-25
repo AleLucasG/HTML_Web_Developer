@@ -7,15 +7,17 @@
   </head>
 
   <body>
-    <details>
-      <summary>Ver código em JavaScript</summary>
-      <pre>
-        <code>
-          function hello() {
-            console.log("Hello, world!");
-          }
-        </code>
-      </pre>
-    </details>
+    <progress id="progress" max="100" min="0" value="0"></progress>
+
+    <script>
+      var progress = document.getElementById("progress");
+      const interval = setInterval(() => {
+        progress.value += 10;
+        if (progress.value >= 100) {
+          alert("Carregamento realizado com sucesso!");
+          clearInterval(interval);
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
