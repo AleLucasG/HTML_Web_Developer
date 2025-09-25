@@ -1,0 +1,263 @@
+-------------  HTML: Recursos especiais -------------
+
+Apresentação
+ 
+ Percurso:
+ - <datalist>
+ - <code>, <kbd>, <pre>
+ - <details>, <summary>
+ - <meter>, <progress>
+ - mark> (com javascript)
+ - <canvas> - Part 1
+ - <canvas> - Part 2
+ - Novos atributos do HTML 5
+ 
+ Objetivo: 
+ Dominar Tags muito importantes, mas as vezes mal utilizada do HTML 5.
+ Uma breve introdução ao desenvolvimento com javascript.
+ Conhecer novos atributos bem úteis para o desenvolvimento mais complexo.
+ 
+------------- <datalist> ------------- 
+
+A tag <datalist> no HTML5 serve para criar uma lista de opções pré-definidas que podem ser sugeridas ao usuário enquanto ele digita em um campo de entrada (<input>).
+
+👉 Diferente de um <select>, o <datalist> não limita o usuário: ele pode escolher uma opção da lista ou digitar algo totalmente novo.
+
+Estrutura básica:
+<label for="fruta">Escolha uma fruta:</label>
+<input list="frutas" id="fruta" name="fruta">
+
+<datalist id="frutas">
+  <option value="Maçã">
+  <option value="Banana">
+  <option value="Laranja">
+  <option value="Uva">
+</datalist>
+
+
+🔎 Como funciona:
+ - O atributo list do <input> se conecta ao id do <datalist>.
+ - O navegador sugere as opções do <datalist> conforme o usuário digita.
+ - O usuário pode digitar algo diferente do que está na lista.
+ 
+ 
+------- Exemplo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML: Recursos especiais</title>
+  </head>
+
+  <body>
+    <input list="browsers" type="search" name="search" />
+    <datalist id="browsers">
+      <option value="chrome">Google Chrome</option>
+      <option value="firefox">Mozila FireFox</option>
+      <option value="edge">Microsoft Edge</option>
+      <option value="safari">Safari</option>
+      <option value="opera">Opera</option>
+    </datalist>
+
+    <br /><br /><br />
+    <select name="browsers" id="browsers">
+      <option value="">Selecione um navegador</option>
+      <option value="chrome">Google Chrome</option>
+      <option value="firefox">Mozila FireFox</option>
+      <option value="edge">Microsoft Edge</option>
+      <option value="safari">Safari</option>
+      <option value="opera">Opera</option>
+    </select>
+  </body>
+</html> 
+
+
+A diferença principal entre <datalist> e <select> é a flexibilidade:
+
+📌 <select>
+ - Cria uma lista suspensa fixa.
+ - O usuário só pode escolher entre as opções disponíveis.
+
+Exemplo:
+<label for="cor">Escolha uma cor:</label>
+<select id="cor" name="cor">
+  <option value="vermelho">Vermelho</option>
+  <option value="azul">Azul</option>
+  <option value="verde">Verde</option>
+</select>
+
+➡️ O usuário só consegue escolher vermelho, azul ou verde.
+
+
+📌 <datalist>
+ - Funciona junto com um <input>.
+ - O usuário pode digitar livremente ou escolher uma sugestão.
+
+Exemplo:
+<label for="cor">Digite ou escolha uma cor:</label>
+<input list="cores" id="cor" name="cor">
+<datalist id="cores">
+  <option value="Vermelho">
+  <option value="Azul">
+  <option value="Verde">
+</datalist>
+
+
+➡️ O usuário pode escolher vermelho, azul, verde ou digitar qualquer outra cor (ex: "amarelo").
+
+⚖️ Resumindo:
+ - <select> → limita a escolha, não deixa digitar livre.
+ - <datalist> → sugere opções, mas deixa o usuário escrever o que quiser.
+ 
+------------- <code>, <kbd>, <pre> ------------- 
+
+Essas três tags são usadas para representar código ou texto relacionado a programação/digitação em HTML, mas cada uma tem um objetivo diferente:
+
+1. <code>
+ - Representa um trecho de código (inline ou em bloco).
+ - O navegador geralmente exibe em fonte monoespaçada.
+ - Uso: mostrar código dentro de frases ou blocos.
+
+<p>Para exibir texto na tela use a função <code>console.log()</code>.</p>
+
+
+2. <kbd>
+ - Representa uma entrada do usuário pelo teclado (ou outro dispositivo de entrada).
+ - Útil para documentações que mostram quais teclas o usuário deve pressionar.
+
+<p>Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.</p>
+
+
+3. <pre>
+ - Significa "preformatted text".
+ - Mantém quebras de linha, espaços e tabulações exatamente como estão no HTML.
+ - Muito usado para mostrar blocos de código ou textos alinhados.
+
+<pre>
+Linha 1
+    Linha 2 com tab
+        Linha 3 com mais tab
+</pre>
+
+
+📌 Resumindo:
+ - <code> → mostra código de programação.
+ - <kbd> → mostra teclas/entradas do usuário.
+ - <pre> → preserva a formatação original do texto.
+ 
+ 
+------- Exemplo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML: Recursos especiais</title>
+
+    <style>
+      kbd {
+        border: solid 1px black;
+      }
+      pre {
+        background: f1f1f1;
+      }
+      pre > code {
+        color: red;
+      }
+      pre > p {
+        font-style: italic;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Para exibir texto na tela use a função <code>console.log()</code>.</p>
+
+    <p>Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.</p>
+
+    <pre>
+      <code>
+        Linha 1
+          Linha 2 com tab
+            Linha 3 com mais tab
+    </pre>
+  </body>
+</html> 
+
+
+------------- <details>, <summary> ------------- 
+
+📌 <details>
+ - Cria uma seção ocultável/expandível.
+ - Quando fechada, mostra só o <summary>.
+ - Quando aberta, exibe o conteúdo interno.
+
+📌 <summary>
+ - Define o título/legenda que aparece na barra clicável.
+ - Fica dentro do <details>.
+
+Exemplo prático:
+<details>
+  <summary>Mais informações</summary>
+  <p>Aqui está o texto extra que pode ser expandido ou ocultado.</p>
+</details>
+
+
+➡️ O usuário vê só “Mais informações” e, ao clicar, o parágrafo aparece.
+
+Exemplo com código:
+<details>
+  <summary>Ver código em JavaScript</summary>
+  <pre><code>
+function hello() {
+  console.log("Hello, world!");
+}
+  </code></pre>
+</details>
+
+
+📌 Resumo:
+ - <details> → cria o bloco expansível.
+ - <summary> → define o título visível para abrir/fechar.
+ 
+ 
+------- Exemplo 
+ 
+ <!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML: Recursos especiais</title>
+  </head>
+
+  <body>
+    <details>
+      <summary>Ver código em JavaScript</summary>
+      <pre>
+        <code>
+          function hello() {
+            console.log("Hello, world!");
+          }
+        </code>
+      </pre>
+    </details>
+  </body>
+</html>
+
+
+
+------------- <meter>, <progress> ------------- 
+
+
+-------------  mark> (com javascript) ------------- 
+
+-------------  <canvas> - Part 1 ------------- 
+
+-------------  <canvas> - Part 2 ------------- 
+
+-------------  Novos atributos do HTML 5 ------------- 
