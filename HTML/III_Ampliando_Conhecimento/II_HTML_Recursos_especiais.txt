@@ -311,11 +311,113 @@ Exemplo:
   </body>
 </html>
 
-
 -------------  mark> (com javascript) ------------- 
+
+🏷️ Tag <mark>
+ - A tag <mark> (HTML5) serve para destacar um trecho de texto que é considerado relevante para o contexto. 
+ - Visualmente, os navegadores normalmente aplicam um fundo amarelo ao texto dentro de <mark> por padrão. 
+
+ Uso e características
+  - É uma marcação semântica — indica que aquele texto tem relevância dentro do conteúdo, não apenas estilização estética. 
+  - Aceita atributos globais (como id, class, style) e eventos (como onclick) como outras tags HTML. 
+  - Pode-se customizar o estilo via CSS (cor de fundo, cor do texto etc.). 
+
+ Exemplo simples
+  <p>Este é um texto e aqui está um <mark>termo importante</mark> que queremos destacar.</p>
+
+ Observações importantes
+  - Alguns leitores de tela não anunciam automaticamente que o texto está “marcado” (ou seja, pode não haver indicação auditiva). 
+  - Se você quiser tornar isso acessível, pode usar pseudo-elementos CSS (::before / ::after) com content para inserir avisos para tecnologias assistivas. 
+
+ ------- Exemplo 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML: Recursos especiais</title>
+  </head>
+
+  <body>
+    <input type="text" id="busca" /><br />
+    <p id="descricao">
+      A primeira regra de qualquer tecnologia utilizada nos negócios é que a
+      automação aplicada a uma operação eficiente aumentará a eficiência. A
+      segunda é que a automação aplicada a uma operação ineficiente aumentará a
+      ineficiência
+    </p>
+
+    <script>
+      var searchField = document.getElementById("busca");
+      var descriptionObject = document.getElementById("descricao");
+      var textToSearch = descriptionObject.innerHTML;
+
+      function realizaBusca(busca) {
+        const regex = new RegExp(`(${busca})(?!(.(?!<mark>))*</mark>)+`, "ig");
+        const ocurrences = textToSearch.match(regex);
+        descriptionObject.innerHTML = textToSearch.replace(
+          regex,
+          `<mark>${busca}</mark>`
+        );
+      }
+
+      searchField.addEventListener("keyup", (e) =>
+        realizaBusca(e.target.value)
+      );
+    </script>
+  </body>
+</html>
 
 -------------  <canvas> - Part 1 ------------- 
 
+ O que é <canvas>
+ 
+ <canvas> é uma área retangular em HTML usada para desenhar graficamente via JavaScript. 
+ É ideal para gráficos, jogos 2D, visualizações, assinaturas, animações e desenhos dinâmicos. 
+ O elemento em si é só uma tela — tudo que aparece vem de código JS.
+ 
+ Básico: estrutura HTML
+ <canvas id="meuCanvas" width="600" height="300">
+   Seu navegador não suporta canvas.
+ </canvas>
+
+
+ - width e height definem a resolução da tela (padrão 300×150).
+ - Dentro da tag pode ter conteúdo alternativo para navegadores antigos / leitor de tela.
+
+------- Exemplo 
+
+site https://www.w3schools.com/html/html5_canvas.asp
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas - Parte 1</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="100"
+      style="border: 1px solid #000000"
+    >
+    </canvas>
+
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.moveTo(0, 0);
+      ctx.lineTo(200, 100);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
+
+
 -------------  <canvas> - Part 2 ------------- 
+
 
 -------------  Novos atributos do HTML 5 ------------- 
