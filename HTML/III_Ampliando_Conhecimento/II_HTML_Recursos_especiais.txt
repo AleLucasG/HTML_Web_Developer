@@ -253,6 +253,64 @@ function hello() {
 
 ------------- <meter>, <progress> ------------- 
 
+📌 <progress>
+ - Representa o progresso de uma tarefa em andamento.
+ - Normalmente usado para carregamento, upload, download etc.
+ - Pode ter valores mínimo (min), máximo (max) e atual (value).
+
+Exemplo:
+<label for="upload">Upload do arquivo:</label>
+<progress id="upload" value="40" max="100">40%</progress>
+
+➡️ Mostra que o upload está em 40% concluído.
+
+
+📌 <meter>
+ - Representa um valor dentro de um intervalo conhecido, como uma medida ou nível.
+ - Usado para indicadores de quantidade, como nota, pontuação, temperatura, nível de bateria etc.
+ - Tem atributos como min, max, value, low, high, optimum.
+
+Exemplo:
+<label for="nota">Nota do aluno:</label>
+<meter id="nota" value="7.5" min="0" max="10" low="4" high="8" optimum="10">
+  7.5 de 10
+</meter>
+
+➡️ Mostra uma barra indicando a nota 7.5 dentro da escala de 0 a 10.
+
+⚖️ Diferença resumida:
+ - <progress> → usado para progresso de tarefas em execução (carregando algo).
+ - <meter> → usado para indicar um valor mensurável dentro de uma escala (nível, medida, desempenho). Um medidor
+ 
+ 
+ ------- Exemplo 
+ 
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML: Recursos especiais</title>
+  </head>
+
+  <body>
+    <meter max="100" min="0" value="50"></meter>
+
+    <progress id="progress" max="100" min="0" value="0"></progress>
+
+    <script>
+      var progress = document.getElementById("progress");
+      const interval = setInterval(() => {
+        progress.value += 10;
+        if (progress.value >= 100) {
+          alert("Carregamento realizado com sucesso!");
+          clearInterval(interval);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
+
 
 -------------  mark> (com javascript) ------------- 
 
